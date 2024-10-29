@@ -5,13 +5,14 @@ button,html{
 }
 body{
     font-family:"Nunito", sans-serif;
-    margin: 20px;
+    margin: 10px;
 }
 
 /* ENCABEZADO - para todas las paginas */
 
 header{
     display: flex; /* Activa Flexbox para el header */
+    flex-wrap: nowrap;
     align-items: center; /* Alinea verticalmente al centro */
     padding: 20px; /* Espacio alrededor del header */
     height: 25px; /* Establece una altura fija*/
@@ -44,6 +45,14 @@ header{
 .header-links a:hover{
     color:#cbc411;
 }
+
+/* Media query para tabletas */
+@media (min-width: 600px){
+    body {
+        padding: 20px;
+    }
+}
+
 
 /* INICIO */
 
