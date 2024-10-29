@@ -89,6 +89,41 @@ header{
     color:#292828;
 }
 
+/* Para teléfonos celulares */
+@media (max-width: 480px) {
+    .bienvenidadeinicio{
+        text-align: center;
+    }
+    
+    .bienvenida{
+        font-weight: bold;
+        font-size:20px;
+        margin-top: 25px;
+        margin-bottom:5px;
+    }
+    
+    .holaSoySofia{
+        color:#895442;
+    }
+    .yacovella{
+        color:#cbc411;
+    }
+    .soy{
+        width: 100%; /* Ancho maximo */
+        text-align: center;
+        font-weight: bold;
+        font-size:15px;
+        margin:10px;
+        color:#292828;
+    }
+    .texto{
+        font-size:7px;
+        margin-top: 10px;
+        margin-bottom:30px;
+        color:#292828;
+    }
+}
+
 /* CONTACTO */
 
 .tituloContacto{
