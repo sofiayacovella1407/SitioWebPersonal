@@ -74,7 +74,8 @@ header{
 }
 
 .soy{
-    width: 1200px; /* Ancho fijo */
+    width: 100%; /* Ancho maximo */
+    text-align: center;
     font-weight: bold;
     font-size:30px;
     margin:10px;
