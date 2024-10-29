@@ -1,28 +1,79 @@
-
-/* DETERMINO LA FUENTE DE TODA LA WEB incluyendo botones*/
-button,html{
-    font-family:"Nunito", sans-serif; 
+/* DETERMINO LA FUENTE DE TODA LA WEB incluyendo botones */
+button, html {
+    font-family: "Nunito", sans-serif; 
 }
-body{
-    font-family:"Nunito", sans-serif;
-    margin: 20px;
+
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    height: 100vh; /* Establece la altura mínima al 100% de la altura de la ventana */
+    display: flex; /* Permite usar flexbox */
+    flex-direction: column; /* Organiza los elementos en una columna */
+}
+main {
+    flex: 1; /* Permite que el main ocupe el espacio disponible */
 }
 
 /* ENCABEZADO - para todas las paginas */
-
-header{
+header {
     display: flex; /* Activa Flexbox para el header */
     align-items: center; /* Alinea verticalmente al centro */
-    padding: 20px; /* Espacio alrededor del header */
-    height: 25px; /* Establece una altura fija*/
+    padding: 10px; /* Espacio alrededor del header */
+    position: relative; /* Necesario para el menú hamburguesa */
 }
 
-.header-logo{
-    margin: 40px;
-    width: 250px; height:55px;
+.menu-toggle {
+    display: none; /* Oculta el botón en pantallas grandes */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 50px;
+    margin-left: auto; /* Empuja el botón a la derecha */    
 }
 
-.header-links{
+.header-logo {
+    
+    width: 250px; /* Tamaño reducido para el logo */
+    height: auto; /* Mantiene la proporción */
+}
+
+
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: #895442; /* Color de la hamburguesa */
+    display: block;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #895442; /* Color de la hamburguesa */
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px; /* Espacio entre líneas */
+}
+
+.hamburger::after {
+    top: 8px; /* Espacio entre líneas */
+}
+
+/* Menú oculto en pantallas pequeñas */
+.navegador {
+    display: flex; /* Mostrar en flex en pantallas grandes */
+}
+
+.header-links {
     list-style-type: none; /* Quita los puntos de la lista */
     display: flex; /* alinea los elementos horizontalmente */
     padding: 0; /* Quita el padding por defecto */
@@ -33,281 +84,136 @@ header{
     margin: 40px; /* Espacio horizontal entre los elementos de la lista */
 }
 
-.header-links a{
+.header-links a {
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
-    margin:0px;
-    color:#895442;
-}
-
-.header-links a:hover{
-    color:#cbc411;
-}
-
-/* INICIO */
-
-.bienvenidadeinicio{
-    text-align: center;
-}
-
-.bienvenida{
-    font-weight: bold;
-    font-size:65px;
-    margin-top: 35px;
-    margin-bottom:15px;
-}
-
-.holaSoySofia{
-    color:#895442;
-}
-.yacovella{
-    color:#cbc411;
-}
-
-.fotodepresentacion{
-    max-width: 100%; /* Ancho máximo de la imagen es el 100% del contenedor */
-    max-height: 100%; /* Altura máxima de la imagen es el 100% del contenedor */
-    display: block; /* Elimina el espacio adicional debajo de la imagen */
-    margin-top:0px;
-    margin-bottom:0px;
-}
-
-.soy{
-    width: 100%; /* Ancho maximo */
-    text-align: center;
-    font-weight: bold;
-    font-size:30px;
-    margin:10px;
-    color:#292828;
-}
-
-.texto{
-    font-size:25px;
-    margin-top: 10px;
-    margin-bottom:30px;
-    color:#292828;
-}
-
-/* Para teléfonos celulares */
-@media (max-width: 480px) {
-    .bienvenidadeinicio{
-        text-align: center;
-    }
-    
-    .bienvenida{
-        font-weight: bold;
-        font-size:20px;
-        margin-top: 25px;
-        margin-bottom:5px;
-    }
-    
-    .holaSoySofia{
-        color:#895442;
-    }
-    .yacovella{
-        color:#cbc411;
-    }
-    .soy{
-        width: 100%; /* Ancho maximo */
-        text-align: center;
-        font-weight: bold;
-        font-size:15px;
-        margin:10px;
-        color:#292828;
-    }
-    .texto{
-        font-size:7px;
-        margin-top: 10px;
-        margin-bottom:30px;
-        color:#292828;
-    }
-}
-
-/* CONTACTO */
-
-.tituloContacto{
-    text-align: center;
-    font-weight: bold;
-    font-size:65px;
-    margin-top: 5px;
-    margin-bottom:5px;
-}
-
-.contenedorformulario{
-    display: flex; 
-    margin-left: 140px;
-    margin-right: 50px;
-    gap:150px
-}
-
-.formulario{
-    display: flex;
-    flex-direction: column; /* Colocar los elementos en columna */
-}
-form {
-    max-width: 400px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin: 5px 5px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #c2bd7b; /* Color de fondo */
-    color: white; /* Color del texto */
-    border-radius: 5px;
-    border-color: #292828;
-    
-}
-
-button {
-    font-size: 20px;
-    padding: 10px 15px;
-    background-color: #895442;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; /*poner cursor tipo puntero*/
-    float: right; /* Alinear a la derecha */
-}
-
-button:hover {
-    background-color: #9f6f5f;
-}
-
-/* EDUCACION */
-
-.educacion{
-    font-weight: bold;
-    font-size:65px;
-    text-align: center;
-}
-
-.titulo-formaciones{
-    font-weight: bold;
-    font-size:35px;
-    text-align: center;
+    margin: 0;
     color: #895442;
 }
 
-.titulo {
-    text-decoration: underline;
-    font-size:20px;
-    text-align: center;
-    margin:10px;
+.header-links a:hover {
+    color: #cbc411;
 }
 
-.parrafo{
-    text-decoration: none;
-    font-size:15px;
+/* INICIO */
+.bienvenidadeinicio {
     text-align: center;
-    margin:10px;
 }
 
-article{
-    margin-bottom: 30px; /* Espaciado inferior entre artículos */
-    color: black; /* color del artículo */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 5px; /* Espaciado interno */
-    background-color: #cbc411; /* Color de fondo */
-}
-
-/* SOBREMI */
-
-.titulo-sobremi{
-    text-align: center;
+.bienvenida {
     font-weight: bold;
-    font-size:65px;
-    margin-top: 5px;
-    margin-bottom:5px;
+    font-size: 65px;
+    margin-top: 35px;
+    margin-bottom: 15px;
 }
 
-.parrafo-sobremi{
-    display: flex; 
-    align-items: center; /* Alinea verticalmente */
-    text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    gap:60px
+.holaSoySofia {
+    color: #895442;
 }
 
-.titulo-sobremi{
-    text-align: center;
-    font-weight: bold;
-    font-size:65px;
+.yacovella {
+    color: #cbc411;
+}
+
+.fotodepresentacion {
+    max-width: 100%; /* Ancho máximo de la imagen es el 100% del contenedor */
+    max-height: 100%; /* Altura máxima de la imagen es el 100% del contenedor */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
     margin-top: 0px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
 }
 
-.contenedorsobremi{
-    display: flex; 
-    margin-left: 0px;
-    margin-right: 0px;
-    gap:20px
-}
-
-/* TRABAJOS */
-.trabajos{
-    font-weight: bold;
-    font-size:65px;
+.soy {
+    width: 100%; /* Ancho máximo */
     text-align: center;
-}
-
-.contenedortrabajos{
-    display: flex; 
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Alinea verticalmente */
-}
-
-.clickable-image{
-    width: 260px; height: 230px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.trabajos-links{
-    padding-top:0px;
-    padding-bottom:0px;
-}
-
-.trabajos-links a{
     font-weight: bold;
-    margin:50px;
-    color:#89544200;
+    font-size: 30px;
+    margin: 10px;
+    color: #292828;
 }
 
+.texto {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #292828;
+}
 
-/* PIE DE PAGINA - para todas las paginas */
-
-footer{
+/* Estilos para el pie de página */
+footer {
     background-color: #895442;
     display: flex; 
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Alinea verticalmente */
 }
 
-/*.logo-iniciales{
-    width: 100px; height: 80px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 50px;
-}*/
-
-.footer-clickeables{
-    width: 40px; height: 40px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+/* Estilo de enlaces en el pie de página */
+.footer-clickeables {
+    width: 40px; 
+    height: 40px;
+    margin: 40px;
 }
 
-.footer-links a{
-    font-weight: bold;
-    margin:15px;
-    color:#ffffff00;
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        display: flex; /* Activa Flexbox para el header */
+        align-items: center; /* Alinea verticalmente al centro */
+        padding: 10px; /* Reduce el padding alrededor del header */
+        position: relative; /* Necesario para el menú hamburguesa */
+    }
+    
+    .header-logo {
+        width: 200px; /* Tamaño reducido para el logo */
+        height: auto; /* Mantiene la proporción */
+        margin-right: 20px; /* Espacio a la derecha del logo */
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón en pantallas pequeñas */
+        position: absolute; /* Cambiado a absoluto */
+        top: 10px; /* Ajusta esta propiedad para elevar el botón hamburguesa */
+        right: 10px; /* Alinea el menú hamburguesa a la derecha */
+    }
+
+    .navegador {
+        display: none; /* Oculta el menú en pantallas pequeñas */
+        width: 100%; /* Asegura que ocupe todo el ancho */
+    }
+
+    .navegador.active {
+        display: block; /* Muestra el menú cuando está activo */
+        position: absolute; /* Para que el menú se superponga */
+        top: 80px; /* Ajusta esta propiedad para que el menú se abra más abajo */
+        left: 0;
+        background: white; /* Fondo blanco para el menú */
+        padding: 20px; /* Espacio alrededor del menú */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+        z-index: 10; /* Asegura que el menú esté por encima */
+    }
+
+    .header-links {
+        flex-direction: column; /* Muestra el menú en columna */
+        align-items: flex-start; /* Alinea a la izquierda */
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        padding: 0; /* Elimina el padding por defecto para el menú */
+    }
+
+    .header-links li {
+        margin: 10px 0; /* Espacio vertical entre elementos del menú */
+    }
+
+    .bienvenida {
+        font-size: 40px; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+    .soy {
+        font-size: 20px; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+    .texto {
+        font-size: 18px; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
 }
+
