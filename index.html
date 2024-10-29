@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--CSS-->
     <link rel="stylesheet" href="./css/style.css">
-    <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <title>Portfolio | Sofia Yacovella</title>
 </head>
 <body>
-    <!--ENCABEZADO - todas las paginas lo tienen por igual-->
     <header>
-        <h1>
+        <a href="index.html" class="logo-link">
             <img class="header-logo" src="./img/logo.jpg" alt="Logo del sitio Web">
-        </h1>
+        </a>
+        
+        <!-- Checkbox hack para menú mobile -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    
         <nav class="navegador">
             <ul class="header-links">
                 <li><a href="./index.html">Inicio</a></li>
@@ -34,33 +34,44 @@
     </header>
 
     <main>
-        <!-- Inicio -->
-            <section class="bienvenidadeinicio">
-                <div class="titulos">
-                    <h2 class="bienvenida"><span class="holaSoySofia">Hola! Soy Sofia</span> <span class="yacovella">Yacovella</span></h2>
-                </div>
-                <h3 class="soy">Community Manager, futura Ingeniera en Sistemas de Información y <br>
-                    Desarrolladora Front End</h3>
-                <div class="foto-bienvenida">
-                    <img src="./img/fotobienvenida.png" alt="Foto de Presentacion - Sofia Yacovella" class="fotodepresentacion">
-                </div>
-                <p class="texto">Diseño y codifico tu mejor experiencia digital</p>
-            </section>
+        <section class="bienvenidadeinicio">
+            <div class="titulos">
+                <h2 class="bienvenida"><span class="holaSoySofia">Hola! Soy Sofia</span> <span class="yacovella">Yacovella</span></h2>
+            </div>
+            <h3 class="soy">Community Manager, futura Ingeniera en Sistemas de Información y <br>
+                Desarrolladora Front End</h3>
+            <div class="foto-bienvenida">
+                <img src="./img/fotobienvenida.png" alt="Foto de Presentacion - Sofia Yacovella" class="fotodepresentacion">
+            </div>
+            <p class="texto">Diseño y codifico tu mejor experiencia digital</p>
+        </section>
     </main>
 
-    <!--PIE DE PAGINA - todas las paginas lo tienen por igual-->
     <footer>
         <div class="footer-links">
-            <a href="https://www.instagram.com/sofiayacovella/" target="_blank"><!-- Enlace a abrir en pestaña nueva -->
-                 <img src="./img/instagram logo.png" alt="logo de instagram" class="footer-clickeables">
-            </a>
-            <a href="https://www.linkedin.com/in/sofiayacovella" target="_blank"><!-- Enlace a abrir en pestaña nueva -->
-                <img src="./img/linkedin logo.png" alt="logo de linkedin" class="footer-clickeables">
-            </a>
-            <a href="https://wa.me/543424302010?text=Hola%20Sofia!%20Vengo%20desde%20tu%20Sitio%20Web%F0%9F%8C%90%20y%20queria%20consultarte%20sobre...." target="_blank"><!-- Enlace a abrir en pestaña nueva -->
-                <img src="./img/wsp logo.png" alt="logo de wsp" class="footer-clickeables">
-            </a>
+            <a href="https://www.instagram.com/sofiayacovella/" target="_blank"><img src="./img/instagram logo.png" alt="logo de instagram" class="footer-clickeables"></a>
+            <a href="https://www.linkedin.com/in/sofiayacovella" target="_blank"><img src="./img/linkedin logo.png" alt="logo de linkedin" class="footer-clickeables"></a>
+            <a href="https://wa.me/543424302010?text=Hola%20Sofia!%20Vengo%20desde%20tu%20Sitio%20Web%F0%9F%8C%90%20y%20queria%20consultarte%20sobre...." target="_blank"><img src="./img/wsp logo.png" alt="logo de wsp" class="footer-clickeables"></a>
         </div>
     </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.navegador');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active'); // Cambia la clase 'active' para mostrar/ocultar el menú
+            menuToggle.setAttribute('aria-expanded', nav.classList.contains('active')); // Actualiza el estado del botón
+        });
+
+        // Cerrar el menú al hacer clic en un enlace
+        const navLinks = document.querySelectorAll('.header-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active'); // Cierra el menú
+                menuToggle.setAttribute('aria-expanded', false); // Actualiza el estado del botón
+            });
+        });
+    </script>
 </body>
 </html>

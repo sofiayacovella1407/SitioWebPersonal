@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
- <!--fonts-->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
- 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <title>Trabajos | Sofia Yacovella</title>
 </head>
 <body>
     <header>
-        <h1>
+        <a href="../index.html" class="logo-link">
             <img class="header-logo" src="../img/logo.jpg" alt="Logo sitio Web">
-        </h1>
-        <nav>
+        </a>
+        
+        <!-- Checkbox hack para menú mobile -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+
+        <nav class="navegador">
             <ul class="header-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="./sobremi.html">Sobre mi</a></li>
@@ -33,32 +36,33 @@
     </header>
     <main>
         <!-- TRABAJOS -->
-        <h2 class="trabajos">Trabajos</h2>
-        <div class="contenedortrabajos">
-            <div class="trabajos-links">
-                <a href="https://www.iphoneworldarg.com/" target="_blank"> <!-- Enlace a abrir -->
-                    <img src="../img/sitio web iphone world.png" alt="sitio web ihpone world" class="clickable-image">
-                </a>
-                <a href="https://www.canva.com/design/DAF7JC1jhHc/Xx9-5b784kOmiR26oKkEXQ/edit?utm_content=DAF7JC1jhHc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"> <!-- Enlace a abrir -->
-                    <img src="../img/placas iphone world.png" alt="placas iphone world" class="clickable-image">
-                </a>
-                <a href="https://drive.google.com/file/d/1FWQsXgEUNNpbSo4k6GXVOcRNe0NoMA0o/view?usp=sharing" target="_blank"> <!-- Enlace a abrir -->
-                    <img src="../img/buscaminas codigo.png" alt="codigobuscaminas" class="clickable-image">
-                </a>
+        <section class="trabajos">
+            <div class="contenedortrabajos">
+                <h2 class="titulo-trabajos">Trabajos</h2>
+                <p class="trabajos-links">
+                    <a href="https://www.iphoneworldarg.com/" target="_blank">
+                        <img src="../img/sitio web iphone world.png" alt="sitio web ihpone world" class="clickable-image">
+                    </a>
+                    <a href="https://www.canva.com/design/DAF7JC1jhHc/Xx9-5b784kOmiR26oKkEXQ/edit?utm_content=DAF7JC1jhHc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                        <img src="../img/placas iphone world.png" alt="placas iphone world" class="clickable-image">
+                    </a>
+                    <a href="https://drive.google.com/file/d/1FWQsXgEUNNpbSo4k6GXVOcRNe0NoMA0o/view?usp=sharing" target="_blank">
+                        <img src="../img/buscaminas codigo.png" alt="codigobuscaminas" class="clickable-image">
+                    </a>
+                </p>
             </div>
-        </div>
+        </section>
     </main>
     
-    <!--PIE DE PAGINA - todas las paginas lo tienen por igual-->
     <footer>
         <div class="footer-links">
-            <a href="https://www.instagram.com/sofiayacovella/" target="_blank"><!-- Enlace a abrir en pestaña nueva -->
+            <a href="https://www.instagram.com/sofiayacovella/" target="_blank">
                  <img src="../img/instagram logo.png" alt="logo de instagram" class="footer-clickeables">
             </a>
-            <a href="https://www.linkedin.com/in/sofiayacovella" target="_blank"><!-- Enlace a abrir en pestaña nueva -->
+            <a href="https://www.linkedin.com/in/sofiayacovella" target="_blank">
                 <img src="../img/linkedin logo.png" alt="logo de linkedin" class="footer-clickeables">
             </a>
-            <a href="https://wa.me/543424302010?text=Hola%20Sofia!%20Vengo%20desde%20tu%20Sitio%20Web%F0%9F%8C%90%20y%20queria%20consultarte%20sobre...." target="_blank"><!-- Enlace a abrir en pestaña nueva -->
+            <a href="https://wa.me/543424302010?text=Hola%20Sofia!%20Vengo%20desde%20tu%20Sitio%20Web%F0%9F%8C%90%20y%20queria%20consultarte%20sobre...." target="_blank">
                 <img src="../img/wsp logo.png" alt="logo de wsp" class="footer-clickeables">
             </a>
         </div>

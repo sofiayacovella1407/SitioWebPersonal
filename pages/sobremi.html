@@ -18,10 +18,17 @@
 </head>
 <body>
     <header>
-        <h1>
+        <a href="../index.html" class="logo-link">
             <img class="header-logo" src="../img/logo.jpg" alt="Logo sitio Web">
-        </h1>
-        <nav>
+        </a>
+        
+        <!-- Checkbox hack para menú mobile -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+
+        <nav class="navegador">
             <ul class="header-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="./sobremi.html">Sobre mi</a></li>
@@ -32,17 +39,22 @@
         </nav>
     </header>
     <main>
-        <!-- SOBRE MI -->
         <section class="sobremi">
             <div class="contenedorsobremi">
                 <div class="parrafo-sobremi">
-                    <p class="titulo-sobremi">Sobre Mi</p>
-                    <p>Desde que comencé mi carrera como freelancer, he tenido la oportunidad de trabajar como community manager, crear un sitio de e-commerce y diseñar el logo para una tienda de celulares y un bazar. He colaborado con marcas nacionales como Fecovita, Banco Bica y Pilay, y actualmente ofrezco mis servicios artísticos a una productora de eventos.<br>
-                        Estoy estudiando Ingeniería en Sistemas de Información en la UTN y desarrollo front-end en Coderhouse.<br> Me apasionan las nuevas tecnologías y disfruto comunicar a través de las redes, así como diseñar y crear proyectos que generen un impacto positivo en los usuarios.<br> Además, tengo un fuerte dominio del inglés, fruto de cinco años de estudio en una academia, lo que complementa mi habilidad para conectar y colaborar en un entorno global. Siempre busco aprender y crecer en cada paso de mi trayectoria.
+                    <h2 class="titulo-sobremi">Sobre Mi</h2>
+                    <p>
+                        Desde que comencé mi carrera como freelancer, he tenido la oportunidad de trabajar como community manager, crear un sitio de e-commerce y diseñar el logo para una tienda de celulares y un bazar. He colaborado con marcas nacionales como Fecovita, Banco Bica y Pilay, y actualmente ofrezco mis servicios artísticos a una productora de eventos.
+                        <br><br>
+                        Estoy estudiando Ingeniería en Sistemas de Información en la UTN y desarrollo front-end en Coderhouse.
+                        <br><br>
+                        Me apasionan las nuevas tecnologías y disfruto comunicar a través de las redes, así como diseñar y crear proyectos que generen un impacto positivo en los usuarios.
+                        <br><br>
+                        Además, tengo un fuerte dominio del inglés, fruto de cinco años de estudio en una academia, lo que complementa mi habilidad para conectar y colaborar en un entorno global. Siempre busco aprender y crecer en cada paso de mi trayectoria.
                     </p>
                 </div>
-                <div class="imagen-sobremi"></div>
-                    <img src="../img/1er foto - sobre mi.jpg" alt="mujer trbajando en una computadora" class="imgsobremi">
+                <div class="imagen-sobremi">
+                    <img src="../img/1er foto - sobre mi.jpg" alt="Foto de Sofia Yacovella" class="imgsobremi">
                 </div>
             </div>
         </section>

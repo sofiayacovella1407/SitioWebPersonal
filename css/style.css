@@ -1,166 +1,477 @@
-
-/* DETERMINO LA FUENTE DE TODA LA WEB incluyendo botones*/
-button,html{
-    font-family:"Nunito", sans-serif; 
-}
-body{
-    font-family:"Nunito", sans-serif;
-    margin: 10px;
+/* estilo base */
+:root {
+    --color-primary: #895442;
+    --color-secondary: #cbc411;
+    --color-text: #292828;
 }
 
-/* ENCABEZADO - para todas las paginas */
-
-header{
-    display: flex; /* Activa Flexbox para el header */
-    flex-wrap: nowrap;
-    align-items: center; /* Alinea verticalmente al centro */
-    padding: 20px; /* Espacio alrededor del header */
-    height: 25px; /* Establece una altura fija*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header-logo{
-    margin: 40px;
-    width: 250px; height:55px;
+body {
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
-.header-links{
-    list-style-type: none; /* Quita los puntos de la lista */
-    display: flex; /* alinea los elementos horizontalmente */
-    padding: 0; /* Quita el padding por defecto */
-    margin: 0; /* Quita el margin por defecto */
+/* HEADER RESPONSIVE */
+header {
+    background: white;
+    padding: 1rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
 }
 
-.header-links li {
-    margin: 40px; /* Espacio horizontal entre los elementos de la lista */
+.logo-link {
+    grid-column: 2 / 3;
 }
 
-.header-links a{
+.header-logo {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+.navegador {
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.header-links a {
+    color: var(--color-primary);
     text-decoration: none;
+    font-size: 1.2rem;
     font-weight: bold;
-    font-size: 20px;
-    margin:0px;
-    color:#895442;
 }
 
-.header-links a:hover{
-    color:#cbc411;
+/* Menú hamburguesa */
+.nav-toggle {
+    display: none;
 }
 
-/* Media query para tabletas */
-@media (min-width: 600px){
-    body {
-        padding: 20px;
+.nav-toggle-label {
+    display: none;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr auto 1fr;
+    }
+
+    .nav-toggle-label {
+        display: block;
+        padding: 1rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: var(--color-primary);
+        height: 2px;
+        width: 2em;
+        position: relative;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .nav-toggle-label span::before {
+        bottom: 7px;
+    }
+
+    .nav-toggle-label span::after {
+        top: 7px;
+    }
+
+    .navegador {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        width: 100%;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
+        display: none;
+    }
+
+    .nav-toggle:checked ~ .navegador {
+        transform: scale(1,1);
+        display: block;
+    }
+
+    .header-links {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .header-links li {
+        margin: 0.5rem 0;
+        text-align: center;
     }
 }
 
+/* RESPONSIVE EN CONTENIDO PRINCIPAL*/
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-/* INICIO */
-
-.bienvenidadeinicio{
+.bienvenidadeinicio {
+    display: grid;
+    gap: 2rem;
     text-align: center;
 }
 
-.bienvenida{
-    font-weight: bold;
-    font-size:65px;
-    margin-top: 35px;
-    margin-bottom:15px;
+.holaSoySofia {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #895442;
 }
 
-.holaSoySofia{
-    color:#895442;
-}
 .yacovella{
-    color:#cbc411;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #cbc411;
 }
 
-.fotodepresentacion{
-    max-width: 100%; /* Ancho máximo de la imagen es el 100% del contenedor */
-    max-height: 100%; /* Altura máxima de la imagen es el 100% del contenedor */
-    display: block; /* Elimina el espacio adicional debajo de la imagen */
-    margin-top:0px;
-    margin-bottom:0px;
+.soy {
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: #121010;
 }
 
-.soy{
-    width: 1200px; /* Ancho fijo */
-    font-weight: bold;
-    font-size:30px;
-    margin:10px;
-    color:#292828;
+.fotodepresentacion {
+    max-width: 100%; /* La imagen no excederá el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
 .texto{
-    font-size:25px;
-    margin-top: 10px;
-    margin-bottom:30px;
-    color:#292828;
+    font-size: clamp(0.7rem, 2.7vw, 1.7rem);
+    color: #121010;
+    margin-bottom: 15px;
+}
+
+.trabajos-links a {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* SOBRE MI*/
+.sobremi {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedorsobremi {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.parrafo-sobremi {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.titulo-sobremi {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.parrafo-sobremi p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--color-text);
+    text-align: justify;
+}
+
+.imagen-sobremi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgsobremi {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Media queries para Sobre Mi */
+@media screen and (max-width: 768px) {
+    .contenedorsobremi {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    }
+
+    .parrafo-sobremi {
+        order: 2; /* Cambia el orden en móvil */
+    }
+
+    .imagen-sobremi {
+        order: 1; /* Cambia el orden en móvil */
+    }
+
+    .titulo-sobremi {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .parrafo-sobremi p {
+        padding: 0 1rem;
+    }
+
+    .sobremi {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo-sobremi {
+        font-size: 1.8rem;
+    }
+
+    .parrafo-sobremi p {
+        font-size: 1rem;
+    }
+
+    .sobremi {
+        padding: 0.5rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .titulo-sobremi {
+        font-size: 1.8rem;
+    }
+
+    .parrafo-sobremi p {
+        font-size: 1rem;
+    }
+
+    .sobremi {
+        padding: 0.5rem;
+    }
+}
+
+/* TRABAJOS */
+.trabajos {
+    padding: 20px;
+}
+
+.titulo-trabajos {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.contenedortrabajos {
+    display: flex; 
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    padding: 2rem;
+}
+
+.trabajos-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Centra los enlaces */
+    transition: transform 0.3s ease;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+}
+
+.trabajo-item {
+    display: flex;
+    flex-direction: column; /* Asegura que la imagen y el texto estén en columna */
+    align-items: center; /* Centra los elementos dentro de cada trabajo */
+    text-align: center; /* Centra el texto */
+    margin: 10px; /* Agrega margen entre los trabajos */
+}
+
+.trabajo-item:hover {
+    transform: translateY(-10px);
+}
+
+.clickable-image {
+    width: 100%;
+    max-width: 300px; /* Limita el ancho máximo de la imagen */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.clickable-image:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .titulo-trabajos {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .contenedortrabajos {
+        padding: 1rem;
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+    }
+
+    .trabajos-links {
+        display: inline-flex;
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        justify-content: center; /* Centra horizontalmente */
+        margin-bottom: 5rem;
+    }
+
+    .clickable-image {
+        max-width: 50%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo-trabajos {
+        font-size: 1.8rem;
+    }
+
+    .contenedortrabajos {
+        padding: 0.5rem;
+        display:flex;
+    }
+
+    .trabajo-item {
+        margin-bottom: 5rem; /* Espacio entre los trabajos */
+    }
 }
 
 /* CONTACTO */
+main {
+    padding: 2rem;
+}
 
-.tituloContacto{
+.tituloContacto {
     text-align: center;
     font-weight: bold;
     font-size:65px;
-    margin-top: 5px;
-    margin-bottom:5px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color:black;
 }
 
-.contenedorformulario{
-    display: flex; 
-    margin-left: 140px;
-    margin-right: 50px;
-    gap:150px
+.contenedorformulario {
+    display: inline-flex;
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    justify-content: center; /* Centra horizontalmente */
 }
 
-.formulario{
-    display: flex;
-    flex-direction: column; /* Colocar los elementos en columna */
-}
-form {
-    max-width: 400px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+.imagenformulario {
+    flex: 1; /* Toma el 50% del espacio */
+    margin-right: 1rem;
 }
 
-label {
-    display: block;
-    margin: 5px 5px;
-}
-
-input, textarea {
+.imgform {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #c2bd7b; /* Color de fondo */
-    color: white; /* Color del texto */
-    border-radius: 5px;
-    border-color: #292828;
-    
+    height: auto;
 }
 
-button {
-    font-size: 20px;
-    padding: 10px 15px;
+.formulario {
+    flex: 1; /* Toma el 50% del espacio */
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #121010;
+    background-color: #c2bd7b;
+    border-radius: 4px;
+}
+
+form button {
     background-color: #895442;
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer; /*poner cursor tipo puntero*/
-    float: right; /* Alinear a la derecha */
+    cursor: pointer;
 }
 
-button:hover {
-    background-color: #9f6f5f;
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .navegador {
+        display: none; /* Ocultar el menú de navegación por defecto en móviles */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label + .navegador {
+        display: flex; /* Mostrar el menú al hacer clic en el checkbox */
+    }
+
+    .nav-toggle-label {
+        display: block; /* Mostrar el label para el menú móvil */
+        cursor: pointer;
+    }
+
+    .contenedorformulario {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    }
+
+    .imagenformulario {
+        margin-left: 0rem;
+        margin-right: 0rem; /* Eliminar margen en pantallas pequeñas */
+        margin-bottom: 1rem; /* Añadir margen inferior */
+    }
 }
 
 /* EDUCACION */
 
-.educacion{
+.titulo-educacion{
     font-weight: bold;
     font-size:65px;
     text-align: center;
+    color: black;
 }
 
 .titulo-formaciones{
@@ -192,95 +503,20 @@ article{
     background-color: #cbc411; /* Color de fondo */
 }
 
-/* SOBREMI */
-
-.titulo-sobremi{
-    text-align: center;
-    font-weight: bold;
-    font-size:65px;
-    margin-top: 5px;
-    margin-bottom:5px;
-}
-
-.parrafo-sobremi{
-    display: flex; 
-    align-items: center; /* Alinea verticalmente */
-    text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    gap:60px
-}
-
-.titulo-sobremi{
-    text-align: center;
-    font-weight: bold;
-    font-size:65px;
-    margin-top: 0px;
-    margin-bottom:0px;
-}
-
-.contenedorsobremi{
-    display: flex; 
-    margin-left: 0px;
-    margin-right: 0px;
-    gap:20px
-}
-
-/* TRABAJOS */
-.trabajos{
-    font-weight: bold;
-    font-size:65px;
-    text-align: center;
-}
-
-.contenedortrabajos{
-    display: flex; 
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Alinea verticalmente */
-}
-
-.clickable-image{
-    width: 260px; height: 230px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.trabajos-links{
-    padding-top:0px;
-    padding-bottom:0px;
-}
-
-.trabajos-links a{
-    font-weight: bold;
-    margin:50px;
-    color:#89544200;
-}
-
-
-/* PIE DE PAGINA - para todas las paginas */
-
-footer{
+/* FOOTER*/
+footer {
     background-color: #895442;
-    display: flex; 
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Alinea verticalmente */
+    color: white;
+    text-align: center;
+    padding: 1rem;
 }
 
-/*.logo-iniciales{
-    width: 100px; height: 80px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 50px;
-}*/
-
-.footer-clickeables{
-    width: 40px; height: 40px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+.footer-links {
+    display: flex;
+    justify-content: center;
 }
 
-.footer-links a{
-    font-weight: bold;
-    margin:15px;
-    color:#ffffff00;
+.footer-clickeables {
+    width: 30px; /* Ajusta el tamaño de los iconos */
+    margin: 0 10px;
 }
