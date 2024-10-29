@@ -217,3 +217,190 @@ footer {
     }
 }
 
+/* CONTACTO */
+
+.tituloContacto{
+    text-align: center;
+    font-weight: bold;
+    font-size:65px;
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.contenedorformulario{
+    display: flex; 
+    margin-left: 140px;
+    margin-right: 50px;
+    gap:150px
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columna */
+}
+form {
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 5px 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #c2bd7b; /* Color de fondo */
+    color: white; /* Color del texto */
+    border-radius: 5px;
+    border-color: #292828;
+
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: #895442;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /*poner cursor tipo puntero*/
+    float: right; /* Alinear a la derecha */
+}
+
+button:hover {
+    background-color: #9f6f5f;
+}
+
+/* EDUCACION */
+
+.educacion{
+    font-weight: bold;
+    font-size:65px;
+    text-align: center;
+}
+
+.titulo-formaciones{
+    font-weight: bold;
+    font-size:35px;
+    text-align: center;
+    color: #895442;
+}
+
+.titulo {
+    text-decoration: underline;
+    font-size:20px;
+    text-align: center;
+    margin:10px;
+}
+
+.parrafo{
+    text-decoration: none;
+    font-size:15px;
+    text-align: center;
+    margin:10px;
+}
+
+article{
+    margin-bottom: 30px; /* Espaciado inferior entre artículos */
+    color: black; /* color del artículo */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 5px; /* Espaciado interno */
+    background-color: #cbc411; /* Color de fondo */
+}
+
+/* SOBREMI */
+
+.titulo-sobremi{
+    text-align: center;
+    font-weight: bold;
+    font-size:65px;
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.parrafo-sobremi{
+    display: flex; 
+    align-items: center; /* Alinea verticalmente */
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    gap:60px
+}
+
+.titulo-sobremi{
+    text-align: center;
+    font-weight: bold;
+    font-size:65px;
+    margin-top: 0px;
+    margin-bottom:0px;
+}
+
+.contenedorsobremi{
+    display: flex; 
+    margin-left: 0px;
+    margin-right: 0px;
+    gap:20px
+}
+
+/* TRABAJOS */
+.trabajos{
+    font-weight: bold;
+    font-size:65px;
+    text-align: center;
+}
+
+.contenedortrabajos{
+    display: flex; 
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+}
+
+.clickable-image{
+    width: 260px; height: 230px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.trabajos-links{
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+.trabajos-links a{
+    font-weight: bold;
+    margin:50px;
+    color:#89544200;
+}
+
+
+/* PIE DE PAGINA - para todas las paginas */
+
+footer{
+    background-color: #895442;
+    display: flex; 
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+}
+
+/*.logo-iniciales{
+    width: 100px; height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+}*/
+
+.footer-clickeables{
+    width: 40px; height: 40px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-links a{
+    font-weight: bold;
+    margin:15px;
+    color:#ffffff00;
+}
