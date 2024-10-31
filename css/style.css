@@ -16,6 +16,9 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 /* HEADER RESPONSIVE */
@@ -76,8 +79,8 @@ header {
         display: block;
         padding: 1rem;
         position: absolute;
-        right: 0;
-        top: 0;
+        right: 1rem;
+        top: 1rem;
         cursor: pointer;
     }
 
@@ -86,8 +89,8 @@ header {
     .nav-toggle-label span::after {
         display: block;
         background: var(--color-primary);
-        height: 2px;
-        width: 2em;
+        height: 3px;
+        width: 2rem;
         position: relative;
     }
 
@@ -110,11 +113,18 @@ header {
         top: 100%;
         left: 0;
         background: white;
-        width: 100%;
+        width: 60vw; /* Ocupa un 60% del ancho de la pantalla */
         transform: scale(1, 0);
-        transform-origin: top;
+        transform-origin: top right; /* Expande desde la esquina superior derecha */
         transition: transform 0.3s ease-in-out;
         display: none;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra para mejorar la visibilidad */
+        padding: 2rem 1rem; /* Espaciado interno */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: center; /* Centra los elementos verticalmente */
+        overflow: hidden; /* Evita que el contenido se salga del contenedor */
     }
 
     .nav-toggle:checked ~ .navegador {
@@ -124,12 +134,16 @@ header {
 
     .header-links {
         flex-direction: column;
-        padding: 1rem;
+        padding: 0rem;
     }
 
-    .header-links li {
-        margin: 0.5rem 0;
-        text-align: center;
+    .header-links a {
+        display: flex;
+        color: var(--color-primary);
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: bold;
+        justify-content: center
     }
 }
 
@@ -396,6 +410,8 @@ main {
     display: inline-flex;
     flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     justify-content: center; /* Centra horizontalmente */
+    width: 100%; 
+    margin: 0 auto;
 }
 
 .imagenformulario {
