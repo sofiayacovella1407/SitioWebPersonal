@@ -69,6 +69,17 @@ header {
     display: none;
 }
 
+/* Estilo para el botón de cierre */
+.close-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute; /* Para colocar el botón en la parte superior derecha */
+    top: 20px;
+    right: 20px;
+}
 /* Media queries */
 @media screen and (max-width: 768px) {
     header {
@@ -109,22 +120,23 @@ header {
     }
 
     .navegador {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
-        background: white;
-        width: 60vw; /* Ocupa un 60% del ancho de la pantalla */
+        background-color: rgba(0, 0, 0, 0.888); /* Fondo oscuro semi-transparente */
+        width: 100%; 
+        height:100%;
         transform: scale(1, 0);
         transform-origin: top right; /* Expande desde la esquina superior derecha */
         transition: transform 0.3s ease-in-out;
-        display: none;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra para mejorar la visibilidad */
+        display: flex;
         padding: 2rem 1rem; /* Espaciado interno */
         display: flex;
         flex-direction: column;
         align-items: center; /* Centra los elementos horizontalmente */
         justify-content: center; /* Centra los elementos verticalmente */
         overflow: hidden; /* Evita que el contenido se salga del contenedor */
+        z-index: 999; /* Asegura que el menú esté por encima de otros elementos */
     }
 
     .nav-toggle:checked ~ .navegador {
@@ -139,9 +151,9 @@ header {
 
     .header-links a {
         display: flex;
-        color: var(--color-primary);
+        color: white;
         text-decoration: none;
-        font-size: 0.8rem;
+        font-size: 2rem;
         font-weight: bold;
         justify-content: center
     }
@@ -176,8 +188,11 @@ main {
 }
 
 .fotodepresentacion {
-    max-width: 100%; /* La imagen no excederá el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 100%;  /* Imagen ocupará todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    max-width: none; /* Permite que la imagen se expanda */
+    object-fit: cover; /* Cubre completamente el contenedor */
+    transition: transform 0.5s ease; /* Suaviza la transición del zoom */
 }
 
 .texto{
@@ -268,21 +283,9 @@ main {
     .sobremi {
         padding: 1rem;
     }
+
 }
 
-@media screen and (max-width: 480px) {
-    .titulo-sobremi {
-        font-size: 1.8rem;
-    }
-
-    .parrafo-sobremi p {
-        font-size: 1rem;
-    }
-
-    .sobremi {
-        padding: 0.5rem;
-    }
-}
 @media screen and (max-width: 480px) {
     .titulo-sobremi {
         font-size: 1.8rem;
