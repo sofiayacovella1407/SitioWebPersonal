@@ -5,11 +5,6 @@
     --color-text: #292828;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: "Nunito", sans-serif;
@@ -69,17 +64,6 @@ header {
     display: none;
 }
 
-/* Estilo para el botón de cierre */
-.close-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute; /* Para colocar el botón en la parte superior derecha */
-    top: 20px;
-    right: 20px;
-}
 /* Media queries */
 @media screen and (max-width: 768px) {
     header {
@@ -160,11 +144,6 @@ header {
 }
 
 /* RESPONSIVE EN CONTENIDO PRINCIPAL*/
-main {
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 .bienvenidadeinicio {
     display: grid;
@@ -189,10 +168,6 @@ main {
 
 .fotodepresentacion {
     width: 100%;  /* Imagen ocupará todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción */
-    max-width: none; /* Permite que la imagen se expanda */
-    object-fit: cover; /* Cubre completamente el contenedor */
-    transition: transform 0.5s ease; /* Suaviza la transición del zoom */
 }
 
 .texto{
