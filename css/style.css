@@ -143,7 +143,7 @@ header {
     }
 }
 
-/* RESPONSIVE EN CONTENIDO PRINCIPAL*/
+/* INICIO*/
 
 .bienvenidadeinicio {
     display: grid;
@@ -167,7 +167,9 @@ header {
 }
 
 .fotodepresentacion {
-    width: 100%;  /* Imagen ocupará todo el ancho del contenedor */
+    width: 100%; /* Ajusta la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    transition: transform 0.5s ease; /* Transición suave */
 }
 
 .texto{
@@ -181,6 +183,17 @@ header {
     margin: 0 10px;
 }
 
+@media screen and (max-width: 768px) {
+    .fotodepresentacion {
+        transform: scale(1.1); /* Zoom cuando la pantalla es pequeña */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fotodepresentacion {
+        transform: scale(2); /* Sin zoom cuando la pantalla es grande */
+    }
+}
 /* SOBRE MI*/
 .sobremi {
     padding: 2rem;
