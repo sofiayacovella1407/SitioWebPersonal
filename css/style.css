@@ -169,7 +169,7 @@ header {
 .fotodepresentacion {
     width: 100%; /* Ajusta la imagen al 100% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
-    transition: transform 0.5s ease; /* Transición suave */
+    position:relative;
 }
 
 .texto{
