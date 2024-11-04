@@ -417,12 +417,11 @@ main {
 }
 
 .tituloContacto {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: black;
     text-align: center;
     font-weight: bold;
-    font-size:65px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    color:black;
+    margin-bottom: 1rem;
 }
 
 .contenedorformulario {
@@ -437,16 +436,17 @@ main {
 
 .imagenformulario {
     flex: 1; /* Toma el 50% del espacio */
-    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .imgform {
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 
 .formulario {
     flex: 1; /* Toma el 50% del espacio */
+    margin-right: 4rem;
 }
 
 /* Estilos para el formulario */
@@ -476,31 +476,9 @@ form button {
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
-    .navegador {
-        display: none; /* Ocultar el menú de navegación por defecto en móviles */
-        flex-direction: column;
-        width: 100%;
-    }
-    .nav-toggle:checked + .nav-toggle-label + .navegador {
-        display: flex; /* Mostrar el menú al hacer clic en el checkbox */
-    }
-    .nav-toggle-label {
-        display: block; /* Mostrar el label para el menú móvil */
-        cursor: pointer;
-    }
     .contenedorformulario {
         flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        align-items: stretch; /* Asegurar que ocupen todo el ancho */
-    }
-
-    .imagenformulario {
-        margin-left: 0rem;
-        margin-right: 0rem; /* Eliminar margen en pantallas pequeñas */
-        margin-bottom: 1rem; /* Añadir margen inferior */
-        margin: 0 0 1rem 0; /* Eliminar márgenes laterales y añadir margen inferior */
-    }
-    .formulario {
-        margin: 0; /* Eliminar márgenes adicionales */
+        align-items: center; /* Asegurar que ocupen todo el ancho */
     }
 }
 
