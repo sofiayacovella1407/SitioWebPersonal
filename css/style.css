@@ -426,11 +426,9 @@ main {
 }
 
 .contenedorformulario {
-    display: inline-flex;
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    justify-content: center; /* Centra horizontalmente */
-    display: flex;
-    flex-direction: row; /* Mostrar en fila por defecto */
+    display: flex; 
+    flex-wrap: wrap;;
+    padding: 2rem;
     justify-content: space-between; /* Espacio entre la imagen y el formulario */
     align-items: center;
     width: 100%; 
