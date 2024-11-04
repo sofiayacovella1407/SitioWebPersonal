@@ -481,6 +481,7 @@ form button {
         flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
         align-items: center; /* Centrar contenido */
         padding: 1rem; /* Ajustar padding */
+        overflow-x: hidden;
     }
 
     .formulario,
