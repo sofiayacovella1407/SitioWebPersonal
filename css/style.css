@@ -178,11 +178,6 @@ header {
     margin-bottom: 15px;
 }
 
-.trabajos-links a {
-    font-weight: bold;
-    margin: 0 10px;
-}
-
 
 /* Media query para pantallas medianas */
 @media screen and (max-width: 768px) {
@@ -241,7 +236,7 @@ header {
 }
 
 .titulo-sobremi {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
     font-weight: bold;
@@ -284,11 +279,6 @@ header {
         order: 1; /* Cambia el orden en móvil */
     }
 
-    .titulo-sobremi {
-        font-size: 2rem;
-        margin: 1rem 0;
-    }
-
     .parrafo-sobremi p {
         padding: 0 1rem;
     }
@@ -300,9 +290,6 @@ header {
 }
 
 @media screen and (max-width: 480px) {
-    .titulo-sobremi {
-        font-size: 1.8rem;
-    }
 
     .parrafo-sobremi p {
         font-size: 1rem;
@@ -319,7 +306,7 @@ header {
 }
 
 .titulo-trabajos {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
     font-weight: bold;
@@ -371,10 +358,6 @@ header {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
-    .titulo-trabajos {
-        font-size: 2rem;
-        margin: 1rem 0;
-    }
 
     .contenedortrabajos {
         padding: 1rem;
@@ -394,10 +377,6 @@ header {
 }
 
 @media screen and (max-width: 480px) {
-    .titulo-trabajos {
-        font-size: 1.8rem;
-    }
-
     .contenedortrabajos {
         padding: 0.5rem;
     }
@@ -417,7 +396,7 @@ main {
 }
 
 .tituloContacto {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
     font-weight: bold;
@@ -498,15 +477,16 @@ form button {
 /* EDUCACION */
 
 .titulo-educacion{
-    font-weight: bold;
-    font-size:65px;
-    text-align: center;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .titulo-formaciones{
     font-weight: bold;
-    font-size:35px;
+    font-size:30px;
     text-align: center;
     color: #895442;
 }
