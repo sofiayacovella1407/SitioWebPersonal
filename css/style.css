@@ -8,7 +8,6 @@
 
 body {
     font-family: "Nunito", sans-serif;
-    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
     margin: 0;
@@ -149,6 +148,7 @@ header {
     display: grid;
     gap: 2rem;
     text-align: center;
+    padding: 1rem; /* Añadir un poco de padding para margen interno */
 }
 
 .holaSoySofia {
@@ -169,7 +169,7 @@ header {
 .fotodepresentacion {
     width: 100%; /* Ajusta la imagen al 100% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
-    position:relative;
+    margin: 0 auto; /* Centrar la imagen */
 }
 
 .texto{
@@ -183,41 +183,42 @@ header {
     margin: 0 10px;
 }
 
+
+/* Media query para pantallas medianas */
 @media screen and (max-width: 768px) {
-    .holaSoySofia {
-        font-size: clamp(2.6rem, 5.6vw, 4.6rem);
-    }
-    
-    .yacovella{
-        font-size: clamp(2.6rem, 5.6vw, 4.6rem);
-    }
-    
-    .soy {
-        font-size: clamp(1.6rem, 3.6vw, 2.6rem);
-    }
-    .texto{
-        font-size: clamp(1.3rem, 3.3vw, 2.3rem);
+    .bienvenidadeinicio {
+        gap: 1.5rem; /* Reducir el gap */
+        padding: 0.5rem; /* Reducir el padding */
     }
 
+    .fotodepresentacion {
+        max-width: 300px; /* Ajustar el tamaño máximo */
+    }
+
+    .texto {
+        font-size: clamp(0.9rem, 2.5vw, 1.5rem); /* Ajustar el tamaño de texto */
+    }
 }
 
+/* Media query para pantallas pequeñas (móviles) */
 @media screen and (max-width: 480px) {
-    .holaSoySofia {
-        font-size: clamp(2.3rem, 5.3vw, 4.3rem);
-    }
-    
-    .yacovella{
-        font-size: clamp(2.3rem, 5.3vw, 4.3rem);
-    }
-    
-    .soy {
-        font-size: clamp(1.3rem, 3.3vw, 2.3rem);
-    }
-    .texto{
-        font-size: clamp(1rem, 3vw, 2rem);
+    .bienvenidadeinicio {
+        gap: 1rem; /* Reducir el gap */
     }
 
+    .holaSoySofia, .yacovella, .soy {
+        font-size: clamp(1.5rem, 5vw, 3rem); /* Ajustar el tamaño de los títulos */
+    }
+
+    .fotodepresentacion {
+        max-width: 100%; /* Asegurar que la imagen ocupe el ancho del contenedor */
+    }
+
+    .texto {
+        font-size: clamp(0.8rem, 2vw, 1.3rem); /* Reducir el tamaño del texto */
+    }
 }
+
 /* SOBRE MI*/
 .sobremi {
     padding: 2rem;
@@ -327,9 +328,9 @@ header {
 
 .contenedortrabajos {
     display: flex; 
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Alinea verticalmente */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 2rem;
 }
 
@@ -337,9 +338,10 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Centra los enlaces */
+    justify-content: center;
+    gap: 20px; /* Agrega un espacio entre los elementos */
     transition: transform 0.3s ease;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+    flex-wrap: wrap;
 }
 
 .trabajo-item {
@@ -376,19 +378,18 @@ header {
 
     .contenedortrabajos {
         padding: 1rem;
-        display: flex;
-        justify-content: center; /* Centra horizontalmente */
     }
 
     .trabajos-links {
-        display: inline-flex;
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-        justify-content: center; /* Centra horizontalmente */
+        display: flex;
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra los elementos */
+        gap: 15px;
         margin-bottom: 5rem;
     }
 
     .clickable-image {
-        max-width: 50%; /* Asegura que la imagen no exceda el ancho del contenedor */
+        max-width: 90%; /* Ocupa un 90% del ancho del contenedor */
     }
 }
 
@@ -399,11 +400,14 @@ header {
 
     .contenedortrabajos {
         padding: 0.5rem;
-        display:flex;
     }
 
     .trabajo-item {
-        margin-bottom: 5rem; /* Espacio entre los trabajos */
+        margin-bottom: 3rem; /* Ajustar espacio entre trabajos */
+    }
+
+    .clickable-image {
+        max-width: 100%; /* Ocupa el 100% del ancho del contenedor */
     }
 }
 
@@ -422,6 +426,9 @@ main {
 }
 
 .contenedorformulario {
+    display: inline-flex;
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    justify-content: center; /* Centra horizontalmente */
     display: flex;
     flex-direction: row; /* Mostrar en fila por defecto */
     justify-content: space-between; /* Espacio entre la imagen y el formulario */
@@ -471,15 +478,29 @@ form button {
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
+    .navegador {
+        display: none; /* Ocultar el menú de navegación por defecto en móviles */
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-toggle:checked + .nav-toggle-label + .navegador {
+        display: flex; /* Mostrar el menú al hacer clic en el checkbox */
+    }
+    .nav-toggle-label {
+        display: block; /* Mostrar el label para el menú móvil */
+        cursor: pointer;
+    }
     .contenedorformulario {
         flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
         align-items: stretch; /* Asegurar que ocupen todo el ancho */
     }
 
     .imagenformulario {
+        margin-left: 0rem;
+        margin-right: 0rem; /* Eliminar margen en pantallas pequeñas */
+        margin-bottom: 1rem; /* Añadir margen inferior */
         margin: 0 0 1rem 0; /* Eliminar márgenes laterales y añadir margen inferior */
     }
-
     .formulario {
         margin: 0; /* Eliminar márgenes adicionales */
     }
