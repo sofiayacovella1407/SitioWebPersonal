@@ -184,7 +184,6 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-    
     .holaSoySofia {
         font-size: clamp(2.6rem, 5.6vw, 4.6rem);
     }
@@ -196,11 +195,10 @@ header {
     .soy {
         font-size: clamp(1.6rem, 3.6vw, 2.6rem);
     }
-
     .texto{
         font-size: clamp(1.3rem, 3.3vw, 2.3rem);
     }
-    
+
 }
 
 @media screen and (max-width: 480px) {
@@ -215,7 +213,6 @@ header {
     .soy {
         font-size: clamp(1.3rem, 3.3vw, 2.3rem);
     }
-
     .texto{
         font-size: clamp(1rem, 3vw, 2rem);
     }
@@ -425,9 +422,10 @@ main {
 }
 
 .contenedorformulario {
-    display: inline-flex;
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    justify-content: center; /* Centra horizontalmente */
+    display: flex;
+    flex-direction: row; /* Mostrar en fila por defecto */
+    justify-content: space-between; /* Espacio entre la imagen y el formulario */
+    align-items: center;
     width: 100%; 
     margin: 0 auto;
 }
@@ -473,29 +471,17 @@ form button {
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
-    .navegador {
-        display: none; /* Ocultar el menú de navegación por defecto en móviles */
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-toggle:checked + .nav-toggle-label + .navegador {
-        display: flex; /* Mostrar el menú al hacer clic en el checkbox */
-    }
-
-    .nav-toggle-label {
-        display: block; /* Mostrar el label para el menú móvil */
-        cursor: pointer;
-    }
-
     .contenedorformulario {
         flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: stretch; /* Asegurar que ocupen todo el ancho */
     }
 
     .imagenformulario {
-        margin-left: 0rem;
-        margin-right: 0rem; /* Eliminar margen en pantallas pequeñas */
-        margin-bottom: 1rem; /* Añadir margen inferior */
+        margin: 0 0 1rem 0; /* Eliminar márgenes laterales y añadir margen inferior */
+    }
+
+    .formulario {
+        margin: 0; /* Eliminar márgenes adicionales */
     }
 }
 
