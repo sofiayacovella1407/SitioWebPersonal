@@ -432,6 +432,7 @@ main {
     align-items: center;
     width: 100%; 
     margin: 0 auto;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 .imagenformulario {
@@ -446,7 +447,7 @@ main {
 
 .formulario {
     flex: 1; /* Toma el 50% del espacio */
-    margin-right: 4rem;
+    margin-right: 1rem;
 }
 
 /* Estilos para el formulario */
@@ -478,7 +479,18 @@ form button {
 @media (max-width: 768px) {
     .contenedorformulario {
         flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        align-items: center; /* Asegurar que ocupen todo el ancho */
+        align-items: center; /* Centrar contenido */
+        padding: 1rem; /* Ajustar padding */
+    }
+
+    .formulario,
+    .imagenformulario {
+        margin: 0; /* Eliminar márgenes laterales */
+        width: 100%; /* Asegurar que ocupen todo el ancho disponible */
+    }
+
+    .imgform {
+        width: 100%; /* Asegurar que la imagen ocupe todo el ancho disponible */
     }
 }
 
