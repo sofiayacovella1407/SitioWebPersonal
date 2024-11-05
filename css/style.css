@@ -169,8 +169,8 @@ header {
     gap: 1rem;
     text-align: center;
     padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .bienvenida{
@@ -270,15 +270,13 @@ header {
 
 .contenedorsobremi {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    grid-template-columns: 1.1fr 0.8fr; /* Dos columnas de igual tamaño */
     gap: 1rem;
     align-items: center;
     margin-bottom: 2rem;
 }
 
 .parrafo-sobremi {
-    display: flex;
-    flex-direction: column;
     gap: 1.5rem;
 }
 
@@ -302,21 +300,22 @@ header {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content:center;
+    justify-content:end;
     align-items:center;
 }
 
 .imgsobremi {
     max-width: 100%;
     border-radius: 7px;
+    
 }
 
 /* Media queries para Sobre Mi */
 @media screen and (max-width: 768px) {
     .contenedorsobremi {
         padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
         grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
     }
 
@@ -325,6 +324,7 @@ header {
     }
 
     .imagen-sobremi {
+        justify-content:center;
         order: 1; /* Cambia el orden en móvil */
     }
 
@@ -345,13 +345,15 @@ header {
 @media screen and (max-width: 480px) {
     .contenedorsobremi{
         padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
     .titulo-sobremi {
         font-size: 1.8rem;
     }
-
+    .imagen-sobremi {
+        justify-content:center;
+    }
     .parrafo-sobremi p {
         font-size: 1rem;
     }
@@ -365,8 +367,8 @@ header {
 
 main {
     padding-top: 60px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .titulo-trabajos {
@@ -465,8 +467,8 @@ main {
 /* CONTACTO */
 main {
     padding-top: 60px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .tituloContacto {
@@ -552,8 +554,8 @@ form button {
 /* EDUCACION */
 main {
     padding-top: 60px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 .titulo-educacion{
     font-weight: bold;
