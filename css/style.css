@@ -164,7 +164,7 @@ header {
 }
 
 .soy {
-    font-size: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(1.7rem, 3.7vw, 2.7rem);
     color: #121010;
 }
 
@@ -177,23 +177,24 @@ header {
 }
 
 .texto{
-    font-size: clamp(0.7rem, 2.7vw, 1.7rem);
+    font-size: clamp(1.3rem, 3.3vw, 2.3rem);
     color: #121010;
     margin-bottom: 15px;
 }
 
-.trabajos-links a {
-    font-weight: bold;
-    margin: 0 10px;
-}
-
 /* Media query para pantallas medianas */
 @media screen and (max-width: 768px) {
+
     .bienvenidadeinicio {
         gap: 1.5rem; /* Reducir el gap */
     }
+
     .holaSoySofia, .yacovella {
-        font-size: clamp(1.5rem, 5vw, 3rem); /* Ajustar el tamaño de los títulos */
+        font-size: clamp(2.8rem, 2.8vw, 2.8rem);
+    }
+
+    .soy{
+        font-size: clamp(2.5rem, 4.5vw, 3.5rem);
     }
 
     .fotodepresentacion {
@@ -205,7 +206,7 @@ header {
     }
 
     .texto {
-        font-size: clamp(0.9rem, 2.5vw, 1.5rem); /* Ajustar el tamaño de texto */
+        font-size: clamp(2rem, 3vw, 2rem); /* Ajustar el tamaño de texto */
     }
 }
 
@@ -216,19 +217,23 @@ header {
     }
 
     .holaSoySofia, .yacovella {
-        font-size: clamp(1.5rem, 5vw, 3rem); /* Ajustar el tamaño de los títulos */
+        font-size: clamp(2.7rem, 2.7vw, 2.7rem);
+    }
+
+    .soy{
+        font-size: clamp(2.3rem, 4vw, 3rem);
     }
 
     .fotodepresentacion {
-    display: block;           /* Para que la imagen no tenga espacios laterales */
-    margin: 0 auto;           /* Centra la imagen horizontalmente */
-    width: 100%;          /* La imagen no excederá el ancho del contenedor */
-    height: auto;             /* Mantiene la proporción de la imagen */
-    object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
+        display: block;           /* Para que la imagen no tenga espacios laterales */
+        margin: 0 auto;           /* Centra la imagen horizontalmente */
+        width: 100%;          /* La imagen no excederá el ancho del contenedor */
+        height: auto;             /* Mantiene la proporción de la imagen */
+        object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
     }
 
     .texto {
-        font-size: clamp(0.8rem, 2vw, 1.3rem); /* Reducir el tamaño del texto */
+        font-size: clamp(1.8rem, 2.8vw, 1.8rem); /* Ajustar el tamaño de texto */
     }
 }
 
