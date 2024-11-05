@@ -593,6 +593,8 @@ footer {
 .footer-links {
     display: flex;
     justify-content: center;
+    margin-right: 30px;
+
 }
 
 .footer-clickeables {
