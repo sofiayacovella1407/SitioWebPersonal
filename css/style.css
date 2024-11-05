@@ -281,7 +281,6 @@ header {
 }
 
 .titulo-sobremi {
-    font-size: clamp(2rem, 5vw, 4rem);
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
@@ -328,10 +327,6 @@ header {
         order: 1; /* Cambia el orden en móvil */
     }
 
-    .titulo-sobremi {
-        font-size: 2rem;
-        margin: 1rem 0;
-    }
     .parrafo-sobremi p {
         padding: 0 1rem;
     }
@@ -348,9 +343,7 @@ header {
         padding-right: 20px;
         padding-left: 20px;
     }
-    .titulo-sobremi {
-        font-size: 1.8rem;
-    }
+
     .imagen-sobremi {
         justify-content:center;
     }
@@ -365,14 +358,13 @@ header {
 
 /* TRABAJOS */
 
-main {
+.main {
     padding-top: 60px;
     padding-right: 20px;
     padding-left: 20px;
 }
 
 .titulo-trabajos {
-    font-size: clamp(2rem, 5vw, 4rem);
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
@@ -425,11 +417,7 @@ main {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
-    .titulo-trabajos {
-        font-size: 2rem;
-        margin: 1rem 0;
-    }
-
+    
     .contenedortrabajos {
         padding: 1rem;
     }
@@ -443,14 +431,12 @@ main {
     }
 
     .clickable-image {
-        max-width: 90%; /* Ocupa un 90% del ancho del contenedor */
+        max-width: 1000%; /* Ocupa un 100% del ancho del contenedor */
     }
 }
 
 @media screen and (max-width: 480px) {
-    .titulo-trabajos {
-        font-size: 1.8rem;
-    }
+    
     .contenedortrabajos {
         padding: 0.5rem;
     }
@@ -459,9 +445,6 @@ main {
         margin-bottom: 3rem; /* Ajustar espacio entre trabajos */
     }
 
-    .clickable-image {
-        max-width: 100%; /* Ocupa el 100% del ancho del contenedor */
-    }
 }
 
 /* CONTACTO */
@@ -520,7 +503,7 @@ form input, form textarea, form button {
     margin-bottom: 1rem;
     padding: 0.5rem;
     border: 1px solid #121010;
-    background-color: #c2bd7b;
+    background-color: #c2bd7bba;
     border-radius: 4px;
 }
 
