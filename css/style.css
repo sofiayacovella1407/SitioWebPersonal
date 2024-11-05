@@ -146,11 +146,13 @@ header {
 
 .bienvenidadeinicio {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     text-align: center;
-    padding: 1rem; /* Añadir un poco de padding para margen interno */
 }
 
+.bienvenida{
+    margin:0%;
+}
 .holaSoySofia {
     font-size: clamp(2rem, 5vw, 4rem);
     color: #895442;
@@ -167,9 +169,11 @@ header {
 }
 
 .fotodepresentacion {
-    width: 100%; /* Ajusta la imagen al 100% del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 auto; /* Centrar la imagen */
+    display: block;           /* Para que la imagen no tenga espacios laterales */
+    margin: 0 auto;           /* Centra la imagen horizontalmente */
+    width: 100%;          /* La imagen no excederá el ancho del contenedor */
+    height: auto;             /* Mantiene la proporción de la imagen */
+    object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
 }
 
 .texto{
@@ -178,16 +182,26 @@ header {
     margin-bottom: 15px;
 }
 
+.trabajos-links a {
+    font-weight: bold;
+    margin: 0 10px;
+}
 
 /* Media query para pantallas medianas */
 @media screen and (max-width: 768px) {
     .bienvenidadeinicio {
         gap: 1.5rem; /* Reducir el gap */
-        padding: 0.5rem; /* Reducir el padding */
+    }
+    .holaSoySofia, .yacovella {
+        font-size: clamp(1.5rem, 5vw, 3rem); /* Ajustar el tamaño de los títulos */
     }
 
     .fotodepresentacion {
-        max-width: 300px; /* Ajustar el tamaño máximo */
+        display: block;           /* Para que la imagen no tenga espacios laterales */
+        margin: 0 auto;           /* Centra la imagen horizontalmente */
+        width: 100%;          /* La imagen no excederá el ancho del contenedor */
+        height: auto;             /* Mantiene la proporción de la imagen */
+        object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
     }
 
     .texto {
@@ -201,12 +215,16 @@ header {
         gap: 1rem; /* Reducir el gap */
     }
 
-    .holaSoySofia, .yacovella, .soy {
+    .holaSoySofia, .yacovella {
         font-size: clamp(1.5rem, 5vw, 3rem); /* Ajustar el tamaño de los títulos */
     }
 
     .fotodepresentacion {
-        max-width: 100%; /* Asegurar que la imagen ocupe el ancho del contenedor */
+    display: block;           /* Para que la imagen no tenga espacios laterales */
+    margin: 0 auto;           /* Centra la imagen horizontalmente */
+    width: 100%;          /* La imagen no excederá el ancho del contenedor */
+    height: auto;             /* Mantiene la proporción de la imagen */
+    object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
     }
 
     .texto {
@@ -236,6 +254,7 @@ header {
 }
 
 .titulo-sobremi {
+    font-size: clamp(2rem, 5vw, 4rem);
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
@@ -279,6 +298,10 @@ header {
         order: 1; /* Cambia el orden en móvil */
     }
 
+    .titulo-sobremi {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
     .parrafo-sobremi p {
         padding: 0 1rem;
     }
@@ -290,6 +313,9 @@ header {
 }
 
 @media screen and (max-width: 480px) {
+    .titulo-sobremi {
+        font-size: 1.8rem;
+    }
 
     .parrafo-sobremi p {
         font-size: 1rem;
@@ -306,6 +332,7 @@ header {
 }
 
 .titulo-trabajos {
+    font-size: clamp(2rem, 5vw, 4rem);
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
@@ -358,6 +385,10 @@ header {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
+    .titulo-trabajos {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
 
     .contenedortrabajos {
         padding: 1rem;
@@ -377,6 +408,9 @@ header {
 }
 
 @media screen and (max-width: 480px) {
+    .titulo-trabajos {
+        font-size: 1.8rem;
+    }
     .contenedortrabajos {
         padding: 0.5rem;
     }
@@ -396,6 +430,7 @@ main {
 }
 
 .tituloContacto {
+    font-size: clamp(2rem, 5vw, 4rem);
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
@@ -477,6 +512,9 @@ form button {
 /* EDUCACION */
 
 .titulo-educacion{
+    font-weight: bold;
+    font-size:65px;
+    text-align: center;
     font-size: clamp(2.5rem, 5.5vw, 4.5rem);
     color: black;
     text-align: center;
@@ -486,6 +524,7 @@ form button {
 
 .titulo-formaciones{
     font-weight: bold;
+    font-size:35px;
     font-size:30px;
     text-align: center;
     color: #895442;
