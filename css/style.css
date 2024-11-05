@@ -169,6 +169,8 @@ header {
     gap: 1rem;
     text-align: center;
     padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .bienvenida{
@@ -313,6 +315,8 @@ header {
 @media screen and (max-width: 768px) {
     .contenedorsobremi {
         padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
+        padding-right: 15px;
+        padding-left: 15px;
         grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
     }
 
@@ -341,6 +345,8 @@ header {
 @media screen and (max-width: 480px) {
     .contenedorsobremi{
         padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
+        padding-right: 15px;
+        padding-left: 15px;
     }
     .titulo-sobremi {
         font-size: 1.8rem;
@@ -359,6 +365,8 @@ header {
 
 main {
     padding-top: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .titulo-trabajos {
@@ -457,6 +465,8 @@ main {
 /* CONTACTO */
 main {
     padding-top: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .tituloContacto {
@@ -542,6 +552,8 @@ form button {
 /* EDUCACION */
 main {
     padding-top: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .titulo-educacion{
     font-weight: bold;
