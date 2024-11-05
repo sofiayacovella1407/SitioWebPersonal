@@ -70,7 +70,7 @@ header {
 }
 
 /* Media queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1240px) {
     header {
         grid-template-columns: 1fr auto 1fr;
     }
