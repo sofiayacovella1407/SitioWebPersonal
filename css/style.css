@@ -234,11 +234,11 @@ header {
     }
 
     .holaSoySofia, .yacovella {
-        font-size: clamp(2.7rem, 2.7vw, 2.7rem);
+        font-size: clamp(2.5rem, 2.5vw, 2.5rem);
     }
 
     .soy{
-        font-size: clamp(2rem, 3.7vw, 2.7rem);
+        font-size: clamp(1.7rem, 3.4vw, 2.4rem);
         margin-bottom: 25px;
     }
 
@@ -247,7 +247,7 @@ header {
     }
 
     .texto {
-        font-size: clamp(1.8rem, 2.8vw, 1.8rem); /* Ajustar el tamaño de texto */
+        font-size: clamp(1.5rem, 2.5vw, 1.5rem); /* Ajustar el tamaño de texto */
         margin-top: 25px;
     }
 }
