@@ -25,7 +25,10 @@ body {
 header {
     background: white;
     padding: 1rem;
-    position: relative;
+    text-align: center;
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 1000;
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
 }
@@ -79,7 +82,7 @@ header {
         display: block;
         padding: 1rem;
         position: absolute;
-        right: 1rem;
+        right: 2rem;
         top: 1rem;
         cursor: pointer;
     }
@@ -118,7 +121,6 @@ header {
         transform: scale(1, 0);
         transform-origin: top right; /* Expande desde la esquina superior derecha */
         transition: transform 0.3s ease-in-out;
-        display: flex;
         padding: 2rem 1rem; /* Espaciado interno */
         display: flex;
         flex-direction: column;
@@ -151,18 +153,22 @@ header {
 /* INICIO*/
 
 .main{
-    min-height: 100vh; /* 100% de la altura de la ventana */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Separa el contenido y el footer */
     overflow-x: hidden;
     position: relative;
+    padding: 2rem;
+    max-width: 1200px;
+    display: block;
+    unicode-bidi: isolate;
 }
 
 .bienvenidadeinicio {
     display: grid;
     gap: 1rem;
     text-align: center;
+    padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
 }
 
 .bienvenida{
@@ -196,7 +202,7 @@ header {
 .texto{
     font-size: clamp(1.3rem, 3.3vw, 2.3rem);
     color: #121010;
-    margin-bottom: 15px;
+    margin-bottom: 60px;
 }
 
 /* Media query para pantallas medianas */
@@ -207,23 +213,24 @@ header {
     }
 
     .holaSoySofia, .yacovella {
-        font-size: clamp(2.9rem, 2.9vw, 2.9rem);
+        font-size: clamp(2.4rem, 2.4vw, 2.4rem);
     }
 
     .soy{
-        font-size: clamp(2.5rem, 3.5vw, 2.5rem);
+        font-size: clamp(2rem, 3vw, 2rem);
         margin: 10px;
     }
 
     .fotodepresentacion {
-        transform: scale(1.6); /* Ajusta el nivel de zoom según lo desees */
+        transform: scale(1.4); /* Ajusta el nivel de zoom según lo desees */
         object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
         overflow-x: hidden;
     }
 
     .texto {
-        font-size: clamp(2.2rem, 3.2vw, 2.2rem); /* Ajustar el tamaño de texto */
-        margin: 9px;
+        font-size: clamp(1.7rem, 2.7vw, 1.7rem); /* Ajustar el tamaño de texto */
+        margin-top: 9px;
+        margin-bottom: 25px;
     }
 }
 
@@ -243,18 +250,18 @@ header {
     }
 
     .fotodepresentacion {
-        transform: scale(2); /* Ajusta el nivel de zoom según lo desees */
+        transform: scale(1.8); /* Ajusta el nivel de zoom según lo desees */
     }
 
     .texto {
         font-size: clamp(1.3rem, 2.3vw, 1.3rem); /* Ajustar el tamaño de texto */
         margin-top: 25px;
+        margin-bottom: 25px;
     }
 }
 
 /* SOBRE MI*/
 .sobremi {
-    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -262,7 +269,7 @@ header {
 .contenedorsobremi {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     margin-bottom: 2rem;
 }
@@ -293,20 +300,19 @@ header {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
 }
 
 .imgsobremi {
     max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 7px;
 }
 
 /* Media queries para Sobre Mi */
 @media screen and (max-width: 768px) {
     .contenedorsobremi {
+        padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
         grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
     }
 
@@ -333,6 +339,9 @@ header {
 }
 
 @media screen and (max-width: 480px) {
+    .contenedorsobremi{
+        padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
+    }
     .titulo-sobremi {
         font-size: 1.8rem;
     }
@@ -347,8 +356,9 @@ header {
 }
 
 /* TRABAJOS */
-.trabajos {
-    padding: 20px;
+
+main {
+    padding-top: 60px;
 }
 
 .titulo-trabajos {
@@ -446,7 +456,7 @@ header {
 
 /* CONTACTO */
 main {
-    padding: 2rem;
+    padding-top: 60px;
 }
 
 .tituloContacto {
@@ -530,7 +540,9 @@ form button {
 }
 
 /* EDUCACION */
-
+main {
+    padding-top: 60px;
+}
 .titulo-educacion{
     font-weight: bold;
     font-size:65px;
@@ -574,9 +586,9 @@ article{
 
 /* FOOTER*/
 footer {
-    margin-top: auto; /* Empuja el footer al final */
     background-color: #895442;
     color: white;
+    width: 100%;
     text-align: center;
     padding: 1rem;
 }
