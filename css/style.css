@@ -5,11 +5,17 @@
     --color-text: #292828;
 }
 
+html {
+    overflow-x: hidden; /* Oculta el scroll horizontal en toda la página */
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: "Nunito", sans-serif;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -144,6 +150,15 @@ header {
 
 /* INICIO*/
 
+.main{
+    min-height: 100vh; /* 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Separa el contenido y el footer */
+    overflow-x: hidden;
+    position: relative;
+}
+
 .bienvenidadeinicio {
     display: grid;
     gap: 1rem;
@@ -174,6 +189,8 @@ header {
     width: 100%;          /* La imagen no excederá el ancho del contenedor */
     height: auto;             /* Mantiene la proporción de la imagen */
     object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
+    transform: scale(1); /* Tamaño normal */
+    transition: transform 0.3s ease; /* Suaviza el efecto de zoom */
 }
 
 .texto{
@@ -186,27 +203,27 @@ header {
 @media screen and (max-width: 768px) {
 
     .bienvenidadeinicio {
-        gap: 1.5rem; /* Reducir el gap */
+        gap: 2rem; /* Reducir el gap */
     }
 
     .holaSoySofia, .yacovella {
-        font-size: clamp(2.8rem, 2.8vw, 2.8rem);
+        font-size: clamp(2.9rem, 2.9vw, 2.9rem);
     }
 
     .soy{
-        font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+        font-size: clamp(2.5rem, 3.5vw, 2.5rem);
+        margin: 10px;
     }
 
     .fotodepresentacion {
-        display: block;           /* Para que la imagen no tenga espacios laterales */
-        margin: 0 auto;           /* Centra la imagen horizontalmente */
-        width: 100%;          /* La imagen no excederá el ancho del contenedor */
-        height: auto;             /* Mantiene la proporción de la imagen */
+        transform: scale(1.6); /* Ajusta el nivel de zoom según lo desees */
         object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
+        overflow-x: hidden;
     }
 
     .texto {
-        font-size: clamp(2rem, 3vw, 2rem); /* Ajustar el tamaño de texto */
+        font-size: clamp(2.2rem, 3.2vw, 2.2rem); /* Ajustar el tamaño de texto */
+        margin: 9px;
     }
 }
 
@@ -221,19 +238,17 @@ header {
     }
 
     .soy{
-        font-size: clamp(2.3rem, 4vw, 3rem);
+        font-size: clamp(2rem, 3.7vw, 2.7rem);
+        margin-bottom: 25px;
     }
 
     .fotodepresentacion {
-        display: block;           /* Para que la imagen no tenga espacios laterales */
-        margin: 0 auto;           /* Centra la imagen horizontalmente */
-        width: 100%;          /* La imagen no excederá el ancho del contenedor */
-        height: auto;             /* Mantiene la proporción de la imagen */
-        object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
+        transform: scale(2); /* Ajusta el nivel de zoom según lo desees */
     }
 
     .texto {
         font-size: clamp(1.8rem, 2.8vw, 1.8rem); /* Ajustar el tamaño de texto */
+        margin-top: 25px;
     }
 }
 
@@ -559,6 +574,7 @@ article{
 
 /* FOOTER*/
 footer {
+    margin-top: auto; /* Empuja el footer al final */
     background-color: #895442;
     color: white;
     text-align: center;
