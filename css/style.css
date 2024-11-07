@@ -245,7 +245,7 @@ header {
     }
 
     .soy{
-        font-size: clamp(1.9rem, 3.7vw, 2.7rem);
+        font-size: clamp(1.8rem, 3.6vw, 2.6rem);
         margin-bottom: 25px;
     }
 
@@ -254,7 +254,7 @@ header {
     }
 
     .texto {
-        font-size: clamp(1.3rem, 2.3vw, 1.3rem); /* Ajustar el tamaño de texto */
+        font-size: clamp(1.4rem, 2.4vw, 1.4rem); /* Ajustar el tamaño de texto */
         margin-top: 25px;
     }
 }
