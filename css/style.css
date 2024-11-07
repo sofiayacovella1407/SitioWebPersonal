@@ -225,8 +225,6 @@ header {
 
     .fotodepresentacion {
         transform: scale(1.4); /* Ajusta el nivel de zoom según lo desees */
-        object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
-        overflow-x: hidden;
     }
 
     .texto {
@@ -258,7 +256,6 @@ header {
     .texto {
         font-size: clamp(1.3rem, 2.3vw, 1.3rem); /* Ajustar el tamaño de texto */
         margin-top: 25px;
-        margin-bottom: 25px;
     }
 }
 
@@ -306,7 +303,7 @@ header {
 .imgsobremi {
     max-width: 100%;
     border-radius: 7px;
-    
+
 }
 
 /* Media queries para Sobre Mi */
@@ -338,15 +335,7 @@ header {
 }
 
 @media screen and (max-width: 480px) {
-    .contenedorsobremi{
-        padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
-        padding-right: 20px;
-        padding-left: 20px;
-    }
 
-    .imagen-sobremi {
-        justify-content:center;
-    }
     .parrafo-sobremi p {
         font-size: 1rem;
     }
@@ -417,26 +406,19 @@ header {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
-    
+
     .contenedortrabajos {
         padding: 1rem;
     }
 
     .trabajos-links {
-        display: flex;
         flex-direction: column; /* Cambia la dirección a columna */
-        align-items: center; /* Centra los elementos */
         gap: 15px;
-        margin-bottom: 5rem;
-    }
-
-    .clickable-image {
-        max-width: 1000%; /* Ocupa un 100% del ancho del contenedor */
     }
 }
 
 @media screen and (max-width: 480px) {
-    
+
     .contenedortrabajos {
         padding: 0.5rem;
     }
@@ -448,11 +430,6 @@ header {
 }
 
 /* CONTACTO */
-main {
-    padding-top: 60px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
 
 .tituloContacto {
     font-size: clamp(2rem, 5vw, 4rem);
@@ -518,9 +495,7 @@ form button {
 @media (max-width: 768px) {
     .contenedorformulario {
         flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        align-items: center; /* Centrar contenido */
         padding: 1rem; /* Ajustar padding */
-        overflow-x: hidden;
     }
 
     .formulario,
@@ -594,7 +569,6 @@ footer {
     display: flex;
     justify-content: center;
     margin-right: 30px;
-
 }
 
 .footer-clickeables {
