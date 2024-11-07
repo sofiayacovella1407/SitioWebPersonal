@@ -245,7 +245,7 @@ header {
     }
 
     .soy{
-        font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+        font-size: clamp(1.9rem, 3.7vw, 2.7rem);
         margin-bottom: 25px;
     }
 
