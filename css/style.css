@@ -245,12 +245,12 @@ header {
     }
 
     .soy{
-        font-size: clamp(1.5rem, 3.3vw, 2.3rem);
+        font-size: clamp(1.6rem, 3.4vw, 2.4rem);
         margin-bottom: 25px;
     }
 
     .fotodepresentacion {
-        transform: scale(2); /* Ajusta el nivel de zoom según lo desees */
+        transform: scale(2.2); /* Ajusta el nivel de zoom según lo desees */
     }
 
     .texto {
