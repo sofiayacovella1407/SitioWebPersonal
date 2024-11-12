@@ -1,0 +1,25 @@
+
+@import 'variables'; // Importamos las variables
+@import 'mixins';    // Importamos los mixins
+
+html {
+    font-size: $font-size-base;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $primary-color;
+    color: $text-color;
+    @include border-radius(15px); // Usamos el mixin de border-radius
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+// Estilo para los botones
+button {
+    @include button-style($bg-color: $secondary-color); // Uso del mixin de estilo de botón
+}

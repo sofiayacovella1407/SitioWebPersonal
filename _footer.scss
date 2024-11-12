@@ -1,0 +1,27 @@
+@import 'variables'; // Importamos las variables
+@import 'mixins';    // Importamos los mixins
+
+footer {
+    background-color: $primary-color;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-clickeables {
+        width: 30px;
+    }
+}
+
+// Usamos @extend para reutilizar estilos
+.footer-text {
+    @extend .footer-links;
+    font-size: 1rem;
+    color: lightgray;
+}
