@@ -14,9 +14,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
-<!-- CONTACTO -->
+<!-- Link al CSS de AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Link al CSS de Animate -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 <title>Contacto | Sofia Yacovella</title>
 </head>
+<!-- CONTACTO -->
 <body>
     <header>
         <a href="../index.html" class="logo-link">
@@ -42,29 +47,36 @@
 
     <main>
         <!-- FORMULARIO -->
-        <h1 class="tituloContacto">Contactame</h1>
-        <div class="contenedorformulario">
-            <div class="imagenformulario">
-                <img src="../img/mujer-trabajando.jpg" alt="mujer trbajando en una computadora" class="imgform">
-            </div>
-            <div class="formulario">
-                <form action="#" method="post">
-                    <label for="nombre">Nombre y Apellido:</label>
-                    <input type="text" id="nombre" name="nombreyapellido" required>
+        <div data-aos="fade-down">
+            <h1 class="tituloContacto">Contactame</h1>
+        </div>
 
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="telefono">Telefono:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="8" required></textarea>
-                    
-                    <button type="submit">Enviar</button>
-                </form>
+        <div data-aos="zoom-in">
+            <div class="contenedorformulario">
+                <div class="imagenformulario">
+                    <img src="../img/mujer-trabajando.jpg" alt="mujer trbajando en una computadora" class="imgform">
+                </div>
+                <div class="formulario">
+                    <form action="#" method="post">
+                        <label for="nombre">Nombre y Apellido:</label>
+                        <input type="text" id="nombre" name="nombreyapellido" required>
+    
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+    
+                        <label for="telefono">Telefono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+    
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="8" required></textarea>
+                        
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
             </div>
         </div>
+
+       
     </main>
 
     <!--PIE DE PAGINA - todas las paginas lo tienen por igual-->
@@ -81,5 +93,12 @@
             </a>
         </div>
     </footer>
+
+    <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 </html>

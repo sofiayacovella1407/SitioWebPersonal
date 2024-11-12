@@ -14,8 +14,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+    <!-- Link al CSS de AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Link al CSS de Animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
     <title>Sobre mi | Sofia Yacovella</title>
 </head>
 <body>
@@ -42,10 +45,13 @@
     </header>
     <main>
         <section class="sobremi">
-            <h1 class="titulo-sobremi" class="animate__animated animate__lightSpeedInRight" >Sobre Mi</h1>
+            <div data-aos="fade-down">
+                <h1 class="titulo-sobremi">Sobre Mi</h1>
+            </div>
+            
             <div class="contenedorsobremi">
                 <div class="parrafo-sobremi">
-                    <p>
+                    <p  class="animate__animated animate__animated animate__slideInLeft" >
                         Desde que comencé mi carrera como freelancer, he tenido la oportunidad de trabajar como community manager, crear un sitio de e-commerce y diseñar el logo para una tienda de celulares y un bazar. He colaborado con marcas nacionales como Fecovita, Banco Bica y Pilay, y actualmente ofrezco mis servicios artísticos a una productora de eventos.
                         <br><br>
                         Estoy estudiando Ingeniería en Sistemas de Información en la UTN y desarrollo front-end en Coderhouse.
@@ -56,7 +62,7 @@
                     </p>
                 </div>
                 <div class="imagen-sobremi">
-                    <img src="../img/1erfoto-sobre-mi.jpg" alt="Foto de Sofia Yacovella" class="imgsobremi">
+                    <img src="../img/1erfoto-sobre-mi.jpg" alt="Foto de Sofia Yacovella" class="animate__animated animate__animated animate__slideInRight" class="imgsobremi">
                 </div>
             </div>
         </section>
@@ -76,5 +82,12 @@
             </a>
         </div>
     </footer>
+
+    <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 </html>

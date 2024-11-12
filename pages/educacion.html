@@ -13,6 +13,11 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <!-- Link al CSS de AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Link al CSS de Animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
  
     <title>Educacion | Sofia Yacovella</title>
 </head>
@@ -40,35 +45,38 @@
     </header>
     <main>
         <!-- EDUCACION -->
-        <h1 class="titulo-educacion">Educacion</h1>
+        <div data-aos="fade-down">
+            <h1 class="titulo-educacion">Educacion</h1>
+        </div>
+        
         <div class="titulo-formaciones">
-            <h2>Formacion Academica</h2>
-                <article>
+            <h2 class="titulo-formaciones">Formacion Academica</h2>
+                <article data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h3 class="titulo">TITULO SECUNDARIO:</h3>
                     <p class="parrafo">BACHILLER EN CIENCIAS ECONÓMICAS<br>Año de egreso: 2019</p>
                 </article>
-                <article>
+                <article data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <h4 class="titulo">TITULO UNIVERSITARIO - EN CURSO:</h4>
                     <p class="parrafo">INGENIERIA EN SISTEMAS DE INFORMACIÓN<br>Universidad Tecnologica Nacional - FRSF</p>
                 </article>
-            <h5>Cursos y Capacitaciones</h5>
-                <article>
+            <h5 class="titulo-formaciones">Cursos y Capacitaciones</h5>
+                <article data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h6 class="titulo">Curso "Community Manager & Publicidad"</h6>
                     <p class="parrafo">organizado por CoderHouse<br>SEPTIEMBRE 2023</p>
                 </article>
-                <article>
+                <article data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <h7 class="titulo">Curso "Arbitro Local de Voleibol":</h7>
                     <p class="parrafo">organizado por la Asociación Santafesina de Voleibol<br>ABRIL 2021</p>
                 </article>
-                <article>
+                <article data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h8 class="titulo">Curso de “Protege tu Negocio: Ciberseguridad en el Teletrabajo”:</h8>
                     <p class="parrafo">co-creado por el Instituto Nacional de Ciberseguridad (INCIBE) y Google<br>FEBRERO 2021</p>
                 </article>
-                <article>
+                <article data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <h9 class="titulo">Curso de “Digitaliza paso a paso tu negocio con Google My Business y Youtube”:</h9>
                     <p class="parrafo">organizado por Google<br>FEBRERO 2021</p>
                 </article>
-                <article>
+                <article data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h10 class="titulo"> Carrera "Desarrollo Front End” - EN CURSO:</h10>
                     <p class="parrafo">organizado por CoderHouse</p>
                 </article>
@@ -88,5 +96,12 @@
             </a>
         </div>
     </footer>
+
+    <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 </html>
