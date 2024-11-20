@@ -1,6 +1,6 @@
 
-@import 'variables'; // Importamos las variables
-@import 'mixins';    // Importamos los mixins
+@use 'variables'; // Importamos las variables
+@use 'mixins';    // Importamos los mixins
 
 html {
     font-size: $font-size-base;

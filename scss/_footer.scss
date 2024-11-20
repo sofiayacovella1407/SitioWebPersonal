@@ -1,13 +1,14 @@
-@import 'variables'; // Importamos las variables
-@import 'mixins';    // Importamos los mixins
+@use 'variables'; // Importamos las variables
+@use 'mixins';    // Importamos los mixins
 
 footer {
     background-color: $primary-color;
     color: white;
     width: 100%;
     text-align: center;
+    justify-content: center;
 
-    .footer-links {
+    .footer-links {  
         display: flex;
         justify-content: center;
         gap: 1rem;

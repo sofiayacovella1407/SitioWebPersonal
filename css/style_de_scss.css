@@ -1,115 +1,18 @@
-html {
-  font-size: var(font-size-base);
-  margin: 0;
-  padding: 0;
-}
+/* Error: Undefined mixin.
+ *    ,
+ * 14 |     @include grid-layout(4); // Usamos el mixin para grid layout
+ *    |     ^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   scss\_header.scss 14:5  @use
+ *   scss\style.scss 4:1     root stylesheet */
 
-body {
-  font-family: var(font-family);
-  background-color: var(primary-color);
-  color: var(text-colort);
-  border-radius: 15px;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-button {
-  background-color: var(secondary-color);
-  color: var(text-colort);
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-header {
-  background: white;
-  padding: 1rem;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-header .logo-link {
-  grid-column: 2/3;
-}
-header .header-logo {
-  width: 200px;
-  height: auto;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 14 \2502      @include grid-layout(4); // Usamos el mixin para grid layout\d\a    \2502      ^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\_header.scss 14:5  @use\a   scss\\style.scss 4:1     root stylesheet";
 }
-header .header-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-header .header-links a {
-  color: var(primary-color);
-  text-decoration: none;
-  font-size: var(font-size-large);
-  font-weight: bold;
-}
-
-.nav-toggle {
-  display: block;
-}
-
-ul.nav-items li.home {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  color: var(primary-color);
-  margin: 0.5rem;
-}
-ul.nav-items li.about {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  color: var(primary-color);
-  margin: 0.5rem;
-}
-ul.nav-items li.services {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  color: var(primary-color);
-  margin: 0.5rem;
-}
-ul.nav-items li.contact {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  color: var(primary-color);
-  margin: 0.5rem;
-}
-
-footer {
-  background-color: var(primary-color);
-  color: white;
-  width: 100%;
-  text-align: center;
-}
-footer .footer-links, footer .footer-text {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-footer .footer-clickeables {
-  width: 30px;
-}
-
-.footer-text {
-  font-size: 1rem;
-  color: lightgray;
-}
-
-/*# sourceMappingURL=style_de_scss.css.map */
