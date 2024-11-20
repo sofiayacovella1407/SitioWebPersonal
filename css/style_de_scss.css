@@ -97,7 +97,6 @@ footer {
   color: white;
   width: 100%;
   text-align: center;
-  padding: 1rem;
 }
 footer .footer-links, footer .footer-text {
   display: flex;
@@ -113,3 +112,4 @@ footer .footer-clickeables {
   color: lightgray;
 }
 
+/*# sourceMappingURL=style_de_scss.css.map */
