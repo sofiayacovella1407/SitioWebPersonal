@@ -1,5 +1,5 @@
-@use 'variables'; // Importamos las variables
-@use 'mixins';    // Importamos los mixins
+@import 'variables'; // Importamos las variables
+@import 'mixins';    // Importamos los mixins
 
 $items: 'home', 'about', 'services', 'contact'; // Lista de items
 

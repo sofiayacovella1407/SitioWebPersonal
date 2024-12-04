@@ -1,15 +1,15 @@
-:root {
-    $primary-color: #895442;
-    $secondary-color: #cbc411;
-    $text-color: #292828;
-    $font-family: 'Nunito', sans-serif;
-    $font-size-base: 16px;
-    $font-size-large: 20px;
-}
+$primary-color: #895442;
+$secondary-color: #cbc411;
+$text-color: #292828;
+$font-family: 'Nunito', sans-serif;
+$font-size-base: 16px;
+$font-size-large: 20px;
 
-$primary-color: var(primary-color);
-$secondary-color: var(secondary-color);
-$text-color: var(text-colort);
-$font-family: var(font-family);
-$font-size-base: var(font-size-base);
-$font-size-large: var(font-size-large);
+$colors:(
+    primary-color: $primary-color,
+    secondary-color: $secondary-color,
+    text-color: $text-color,
+    font-family: font-family,
+    font-size-base: $font-size-base,
+    font-size-large: $font-size-large,
+);
