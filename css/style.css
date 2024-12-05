@@ -1,578 +1,116 @@
-/* estilo base */
-
-:root {
-    --color-primary: #895442;
-    --color-secondary: #cbc411;
-    --color-text: #292828;
-}
-
 html {
-    overflow-x: hidden; /* Oculta el scroll horizontal en toda la página */
-    margin: 0;
-    padding: 0;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: "Nunito", sans-serif;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  font-family: "Nunito", sans-serif;
+  background-color: #895442;
+  color: #292828;
+  border-radius: 15px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-/* HEADER RESPONSIVE */
+button {
+  background-color: #cbc411;
+  color: #292828;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
 header {
-    background: white;
-    padding: 1rem;
-    text-align: center;
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    z-index: 1000;
-    display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  background: white;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+header .logo-link {
+  grid-column: 2/3;
+}
+header .header-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+header .header-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+header .header-links a {
+  color: #895442;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.logo-link {
-    grid-column: 2 / 3;
-}
-
-.header-logo {
-    width: 200px;
-    height: auto;
-    display: block;
-}
-
-.navegador {
-    grid-column: 3 / 4;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.header-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-.header-links a {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* Menú hamburguesa */
 .nav-toggle {
-    display: none;
+  display: block;
 }
 
-.nav-toggle-label {
-    display: none;
+ul.nav-items li.home {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  color: #895442;
+  margin: 0.5rem;
+}
+ul.nav-items li.about {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  color: #895442;
+  margin: 0.5rem;
+}
+ul.nav-items li.services {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  color: #895442;
+  margin: 0.5rem;
+}
+ul.nav-items li.contact {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  color: #895442;
+  margin: 0.5rem;
 }
 
-/* Media queries */
-@media screen and (max-width: 1200px) {
-    header {
-        grid-template-columns: 1fr auto 1fr;
-    }
-
-    .nav-toggle-label {
-        display: block;
-        padding: 1rem;
-        position: absolute;
-        right: 2rem;
-        top: 1rem;
-        cursor: pointer;
-    }
-
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: var(--color-primary);
-        height: 3px;
-        width: 2rem;
-        position: relative;
-    }
-
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
-        position: absolute;
-    }
-
-    .nav-toggle-label span::before {
-        bottom: 7px;
-    }
-
-    .nav-toggle-label span::after {
-        top: 7px;
-    }
-
-    .navegador {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.888); /* Fondo oscuro semi-transparente */
-        width: 100%; 
-        height:100%;
-        transform: scale(1, 0);
-        transform-origin: top right; /* Expande desde la esquina superior derecha */
-        transition: transform 0.3s ease-in-out;
-        padding: 2rem 1rem; /* Espaciado interno */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centra los elementos horizontalmente */
-        justify-content: center; /* Centra los elementos verticalmente */
-        overflow: hidden; /* Evita que el contenido se salga del contenedor */
-        z-index: 999; /* Asegura que el menú esté por encima de otros elementos */
-    }
-
-    .nav-toggle:checked ~ .navegador {
-        transform: scale(1,1);
-        display: block;
-    }
-
-    .header-links {
-        flex-direction: column;
-        padding: 0rem;
-    }
-
-    .header-links a {
-        display: flex;
-        color: white;
-        text-decoration: none;
-        font-size: 2rem;
-        font-weight: bold;
-        justify-content: center
-    }
-}
-
-/* INICIO*/
-
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Separa el contenido y el footer */
-    overflow-x: hidden;
-    position: relative;
-    padding: 2rem;
-    max-width: 1200px;
-    display: block;
-    unicode-bidi: isolate;
-}
-
-.bienvenidadeinicio {
-    display: grid;
-    gap: 1rem;
-    text-align: center;
-    padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-.bienvenida{
-    margin:0%;
-}
-.holaSoySofia {
-    font-size: clamp(2rem, 5vw, 4rem);
-    color: #895442;
-}
-
-.yacovella{
-    font-size: clamp(2rem, 5vw, 4rem);
-    color: #cbc411;
-}
-
-.soy {
-    font-size: clamp(1.7rem, 3.7vw, 2.7rem);
-    color: #121010;
-}
-
-.fotodepresentacion {
-    display: block;           /* Para que la imagen no tenga espacios laterales */
-    margin: 0 auto;           /* Centra la imagen horizontalmente */
-    width: 100%;          /* La imagen no excederá el ancho del contenedor */
-    height: auto;             /* Mantiene la proporción de la imagen */
-    object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
-    transform: scale(1); /* Tamaño normal */
-    transition: transform 0.3s ease; /* Suaviza el efecto de zoom */
-}
-
-.texto{
-    font-size: clamp(1.3rem, 3.3vw, 2.3rem);
-    color: #121010;
-    margin-bottom: 60px;
-}
-
-/* Media query para pantallas medianas */
-@media screen and (max-width: 768px) {
-
-    .bienvenidadeinicio {
-        gap: 2rem; /* Reducir el gap */
-    }
-
-    .holaSoySofia, .yacovella {
-        font-size: clamp(2.4rem, 2.4vw, 2.4rem);
-    }
-
-    .soy{
-        font-size: clamp(2rem, 3vw, 2rem);
-        margin: 10px;
-    }
-
-    .fotodepresentacion {
-        transform: scale(1.4); /* Ajusta el nivel de zoom según lo desees */
-    }
-
-    .texto {
-        font-size: clamp(1.7rem, 2.7vw, 1.7rem); /* Ajustar el tamaño de texto */
-        margin-top: 9px;
-        margin-bottom: 25px;
-    }
-}
-
-/* Media query para pantallas pequeñas (móviles) */
-@media screen and (max-width: 480px) {
-    .bienvenidadeinicio {
-        gap: 1rem; /* Reducir el gap */
-    }
-
-    .holaSoySofia, .yacovella {
-        font-size: clamp(2.3rem, 2.3vw, 2.3rem);
-    }
-
-    .soy{
-        font-size: clamp(1.8rem, 3.6vw, 2.6rem);
-        margin-bottom: 25px;
-    }
-
-    .fotodepresentacion {
-        transform: scale(2.2); /* Ajusta el nivel de zoom según lo desees */
-    }
-
-    .texto {
-        font-size: clamp(1.4rem, 2.4vw, 1.4rem); /* Ajustar el tamaño de texto */
-        margin-top: 25px;
-    }
-}
-
-/* SOBRE MI*/
-.sobremi {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contenedorsobremi {
-    display: grid;
-    grid-template-columns: 1.1fr 0.8fr; /* Dos columnas de igual tamaño */
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.parrafo-sobremi {
-    gap: 1.5rem;
-}
-
-.titulo-sobremi {
-    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.parrafo-sobremi p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 1.6;
-    color: var(--color-text);
-    text-align: justify;
-}
-
-.imagen-sobremi {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content:end;
-    align-items:center;
-}
-
-.imgsobremi {
-    max-width: 100%;
-    border-radius: 7px;
-
-}
-
-/* Media queries para Sobre Mi */
-@media screen and (max-width: 768px) {
-    .contenedorsobremi {
-        padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
-        padding-right: 20px;
-        padding-left: 20px;
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-    }
-
-    .parrafo-sobremi {
-        order: 2; /* Cambia el orden en móvil */
-    }
-
-    .imagen-sobremi {
-        justify-content:center;
-        order: 1; /* Cambia el orden en móvil */
-    }
-
-    .parrafo-sobremi p {
-        padding: 0 1rem;
-    }
-
-    .sobremi {
-        padding: 1rem;
-    }
-
-}
-
-@media screen and (max-width: 480px) {
-
-    .parrafo-sobremi p {
-        font-size: 1rem;
-    }
-
-    .sobremi {
-        padding: 0.5rem;
-    }
-}
-
-/* TRABAJOS */
-
-.main {
-    padding-top: 60px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-.titulo-trabajos {
-    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.contenedortrabajos {
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-.trabajos-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Agrega un espacio entre los elementos */
-    transition: transform 0.3s ease;
-    flex-wrap: wrap;
-}
-
-.trabajo-item {
-    display: flex;
-    flex-direction: column; /* Asegura que la imagen y el texto estén en columna */
-    align-items: center; /* Centra los elementos dentro de cada trabajo */
-    text-align: center; /* Centra el texto */
-    margin: 10px; /* Agrega margen entre los trabajos */
-}
-
-.trabajo-item:hover {
-    transform: translateY(-10px);
-}
-
-.clickable-image {
-    width: 100%;
-    max-width: 300px; /* Limita el ancho máximo de la imagen */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.clickable-image:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-/* Media queries */
-@media screen and (max-width: 768px) {
-
-    .contenedortrabajos {
-        padding: 1rem;
-    }
-
-    .trabajos-links {
-        flex-direction: column; /* Cambia la dirección a columna */
-        gap: 15px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-
-    .contenedortrabajos {
-        padding: 0.5rem;
-    }
-
-    .trabajo-item {
-        margin-bottom: 3rem; /* Ajustar espacio entre trabajos */
-    }
-
-}
-
-/* CONTACTO */
-
-.tituloContacto {
-    font-size: clamp(2rem, 5vw, 4rem);
-    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.contenedorformulario {
-    display: flex; 
-    flex-wrap: wrap;;
-    padding: 2rem;
-    justify-content: space-between; /* Espacio entre la imagen y el formulario */
-    align-items: center;
-    width: 100%; 
-    margin: 0 auto;
-    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
-}
-
-.imagenformulario {
-    flex: 1; /* Toma el 50% del espacio */
-    margin-left: 1rem;
-}
-
-.imgform {
-    width: 80%;
-    height: auto;
-}
-
-.formulario {
-    flex: 1; /* Toma el 50% del espacio */
-    margin-right: 1rem;
-}
-
-/* Estilos para el formulario */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-bottom: 0.5rem;
-}
-
-form input, form textarea, form button {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #121010;
-    background-color: #c2bd7bba;
-    border-radius: 4px;
-}
-
-form button {
-    background-color: #895442;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-/* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
-    .contenedorformulario {
-        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-        padding: 1rem; /* Ajustar padding */
-    }
-
-    .formulario,
-    .imagenformulario {
-        margin: 0; /* Eliminar márgenes laterales */
-        width: 100%; /* Asegurar que ocupen todo el ancho disponible */
-    }
-
-    .imgform {
-        width: 100%; /* Asegurar que la imagen ocupe todo el ancho disponible */
-    }
-}
-
-/* EDUCACION */
-main {
-    padding-top: 60px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-.titulo-educacion{
-    font-weight: bold;
-    font-size:65px;
-    text-align: center;
-    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.titulo-formaciones{
-    font-weight: bold;
-    font-size:35px;
-    font-size:30px;
-    text-align: center;
-    color: #895442;
-}
-
-.titulo {
-    text-decoration: underline;
-    font-size:20px;
-    text-align: center;
-    margin:10px;
-}
-
-.parrafo{
-    text-decoration: none;
-    font-size:15px;
-    text-align: center;
-    margin:10px;
-}
-
-article{
-    margin-bottom: 30px; /* Espaciado inferior entre artículos */
-    color: black; /* color del artículo */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 5px; /* Espaciado interno */
-    background-color: #cbc411; /* Color de fondo */
-}
-
-/* FOOTER*/
 footer {
-    background-color: #895442;
-    color: white;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
+  background-color: #895442;
+  color: white;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+footer .footer-links, footer .footer-text {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+footer .footer-clickeables {
+  width: 30px;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    margin-right: 30px;
+.footer-text {
+  font-size: 1rem;
+  color: lightgray;
 }
 
-.footer-clickeables {
-    width: 30px; /* Ajusta el tamaño de los iconos */
-    margin: 0 10px;
-}
+/*# sourceMappingURL=style.css.map */
