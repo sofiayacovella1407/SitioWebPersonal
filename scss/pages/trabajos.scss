@@ -1,0 +1,72 @@
+@import '../variables.scss'; // Importamos las variables
+@import '../mixins.scss';    // Importamos los mixins
+
+/* TRABAJOS */
+
+.trabajos {
+
+    .titulo-trabajos {
+        font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+        color: $text-color;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .contenedortrabajos {
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+
+        .trabajos-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* Agrega un espacio entre los elementos */
+            transition: transform 0.3s ease;
+            flex-wrap: wrap;
+
+            a {
+                display: flex;
+                flex-direction: column; // Asegura que la imagen y el texto estén en columna
+                align-items: center; // Centra los elementos dentro de cada trabajo
+                text-align: center; // Centra el texto
+                margin: 10px; // Agrega margen entre los trabajos
+                
+                .clickable-image {
+                    @include button-style($bg-color: none, $text-color: black, $padding:none, $border-radius:10px);
+                    width: 100%;
+                    max-width: 300px; /* Limita el ancho máximo de la imagen */
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+
+    .contenedortrabajos {
+        padding: 1rem;
+    }
+
+    .trabajos-links {
+        flex-direction: column; /* Cambia la dirección a columna */
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .contenedortrabajos {
+        padding: 0.5rem;
+    }
+
+    .trabajo-item {
+        margin-bottom: 3rem; /* Ajustar espacio entre trabajos */
+    }
+
+}

@@ -1,13 +1,15 @@
 $primary-color: #895442;
 $secondary-color: #cbc411;
+$tertiary-color:#c2bd7bba;
 $text-color: #292828;
 $font-family: 'Nunito', sans-serif;
 $font-size-base: 16px;
 $font-size-large: 20px;
 
-$colors:(
+$colors: (
     primary-color: $primary-color,
     secondary-color: $secondary-color,
+    tertiary-color:$tertiary-color,
     text-color: $text-color,
     font-family: font-family,
     font-size-base: $font-size-base,

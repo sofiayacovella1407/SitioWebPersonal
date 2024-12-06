@@ -1,0 +1,111 @@
+@import 'variables'; // Importamos las variables
+@import 'mixins';    // Importamos los mixins
+
+/* INICIO*/
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Separa el contenido y el footer */
+    overflow-x: hidden;
+    position: relative;
+    padding: 2rem;
+    max-width: 1200px;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.bienvenidadeinicio {
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+    padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
+
+    .bienvenida{
+        margin:0%;
+
+        .holaSoySofia {
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: $primary-color;
+        }
+
+        .yacovella{
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: $secondary-color;
+        }
+    }
+
+    .soy {
+        font-size: clamp(1.7rem, 3.7vw, 2.7rem);
+        color: $text-color;
+    }
+
+    .fotodepresentacion {
+        display: block;           /* Para que la imagen no tenga espacios laterales */
+        margin: 0 auto;           /* Centra la imagen horizontalmente */
+        width: 100%;          /* La imagen no excederá el ancho del contenedor */
+        height: auto;             /* Mantiene la proporción de la imagen */
+        object-fit: contain;      /* Asegura que la imagen se ajuste sin distorsionarse */
+        transform: scale(1); /* Tamaño normal */
+        transition: transform 0.3s ease; /* Suaviza el efecto de zoom */
+    }
+
+    .texto{
+        font-size: clamp(1.3rem, 3.3vw, 2.3rem);
+        color: $text-color;
+        margin-bottom: 60px;
+    }
+}
+
+/* Media query para pantallas medianas */
+@media screen and (max-width: 768px) {
+
+    .bienvenidadeinicio {
+        gap: 2rem; /* Reducir el gap */
+
+        .holaSoySofia, .yacovella {
+            font-size: clamp(2.4rem, 2.4vw, 2.4rem);
+        }
+
+        .soy{
+            font-size: clamp(2rem, 3vw, 2rem);
+            margin: 10px;
+        }
+    
+        .fotodepresentacion {
+            transform: scale(1.4); /* Ajusta el nivel de zoom según lo desees */
+        }
+    
+        .texto {
+            font-size: clamp(1.7rem, 2.7vw, 1.7rem); /* Ajustar el tamaño de texto */
+            margin-top: 9px;
+            margin-bottom: 25px;
+        }
+
+    }
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+    .bienvenidadeinicio {
+        gap: 1rem; /* Reducir el gap */
+
+        .holaSoySofia, .yacovella {
+            font-size: clamp(2.3rem, 2.3vw, 2.3rem);
+        }
+    
+        .soy{
+            font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+            margin-bottom: 25px;
+        }
+    
+        .fotodepresentacion {
+            transform: scale(2.2); /* Ajusta el nivel de zoom según lo desees */
+        }
+    
+        .texto {
+            font-size: clamp(1.4rem, 2.4vw, 1.4rem); /* Ajustar el tamaño de texto */
+            margin-top: 25px;
+        }
+    }
+}

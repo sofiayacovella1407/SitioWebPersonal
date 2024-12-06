@@ -1,0 +1,29 @@
+//mixin para flexbox - utilizado en  header y footer
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+//mixin para botones - utilizado en contacto y trabajos
+@mixin button-style($bg-color, $text-color, $padding: 10px 20px, $border-radius: 5px) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+    }
+    
+}
+
+//mixin para bordes redondeados - utilizado en sobre mi
+@mixin border-radius($radius: 5px) {
+    border-radius: $radius;
+}
+

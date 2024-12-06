@@ -1,0 +1,21 @@
+@import 'variables'; // Importamos las variables
+@import 'mixins';    // Importamos los mixins
+
+
+html {
+    font-size: $font-size-base;
+    overflow-x: hidden; /* Oculta el scroll horizontal en toda la página */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}

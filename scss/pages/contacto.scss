@@ -1,0 +1,81 @@
+@import '../variables.scss'; // Importamos las variables
+@import '../mixins.scss';    // Importamos los mixins
+
+
+/* CONTACTO */
+
+.tituloContacto {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    color:$text-color;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.contenedorformulario {
+    display: flex; 
+    flex-wrap: wrap;;
+    padding: 2rem;
+    justify-content: space-between; /* Espacio entre la imagen y el formulario */
+    align-items: center;
+    width: 100%; 
+    margin: 0 auto;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+
+    .imagenformulario {
+        flex: 1; /* Toma el 50% del espacio */
+        margin-left: 1rem;
+
+        .imgform {
+            width: 80%;
+            height: auto;
+        }
+    }
+
+    .formulario {
+        flex: 1; /* Toma el 50% del espacio */
+        margin-right: 1rem;
+
+        /* Estilos para el formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                margin-bottom: 0.5rem;
+            }
+
+            input,textarea,button {
+                margin-bottom: 1rem;
+                padding: 0.5rem;
+                border: 1px solid $text-color;
+                background-color: $tertiary-color;
+                border-radius: 4px;
+            }
+
+            button {
+                @include button-style($bg-color: $primary-color, $text-color: white); // Botón con color primario
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .contenedorformulario {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        padding: 1rem; /* Ajustar padding */
+        
+        .formulario,
+        .imagenformulario {
+            margin: 0; /* Eliminar márgenes laterales */
+            width: 100%; /* Asegurar que ocupen todo el ancho disponible */
+        }
+
+        .imgform {
+            width: 100%; /* Asegurar que la imagen ocupe todo el ancho disponible */
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@import '../variables.scss'; // Importamos las variables
+@import '../mixins.scss';    // Importamos los mixins
+
+/* SOBRE MI*/
+.sobremi {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .titulo-sobremi {
+        font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+        color: $text-color;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .contenedorsobremi {
+        display: grid;
+        grid-template-columns: 1.1fr 0.8fr; /* Dos columnas de igual tamaño */
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .parrafo-sobremi {
+            gap: 1.5rem;
+
+            p {
+                font-size: clamp(1rem, 2vw, 1.2rem);
+                line-height: 1.6;
+                color: $text-color;
+                text-align: justify;
+            }
+        }
+
+        .imagen-sobremi {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content:end;
+            align-items:center;
+
+            .imgsobremi {
+                max-width: 100%;
+                @include border-radius(7px); // Aplica bordes redondeados de 7px
+            
+            }
+        }
+    }
+}
+
+/* Media queries para Sobre Mi */
+@media screen and (max-width: 768px) {
+    .sobremi {
+        padding: 1rem;
+
+        .contenedorsobremi {
+            padding-top: 60px; /* Espacio superior para evitar que el contenido quede tapado por la navbar */
+            padding-right: 20px;
+            padding-left: 20px;
+            grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        
+            .parrafo-sobremi {
+                order: 2; /* Cambia el orden en móvil */
+            
+                p {
+                    padding: 0 1rem;
+                }
+            }
+
+            .imagen-sobremi {
+                justify-content:center;
+                order: 1; /* Cambia el orden en móvil */
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sobremi {
+        padding: 0.5rem;
+
+        .contenedorsobremi{
+            .parrafo-sobremi{
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
