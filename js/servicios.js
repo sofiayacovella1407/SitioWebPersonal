@@ -203,15 +203,8 @@ if (confirmarCompra) {
 }
 }
 
-
-
-// Event Listener para cuando el DOM esté cargado
 document.addEventListener('DOMContentLoaded', () => {
     mostrarServicios();
-    carrito.actualizarInterfaz();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
     let carritoIcono = document.getElementById("carritoIcono");
     let carritoModal = document.getElementById("carritoModal");
     let cerrarBtn = document.querySelector(".cerrar");
@@ -238,5 +231,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.remove("modal-abierto"); // Restaura el scroll del body
       modalAbierto = false;
     });
-  });
+});
+
+
+
   
