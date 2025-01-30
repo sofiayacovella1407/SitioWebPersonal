@@ -20,10 +20,21 @@
   <!-- Link al CSS de Animate -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <title>Costos y Servicios</title>
+    <title>Servicios y Costos</title>
 </head>
 <body>
     <header>
+
+        <a href="../index.html" class="logo-link">
+            <img class="header-logo" src="../img/logo.jpg" alt="Logo sitio Web">
+        </a>
+        
+        <!-- Checkbox hack para menú mobile -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+
         <nav class="navegador">
             <ul class="header-links">
                 <li><a href="../index.html">Inicio</a></li>
@@ -37,42 +48,52 @@
     </header>
 
     <main>
-        <section class="servicios-hero bg-light py-5 text-center">
-            <div class="container">
-                <h1 class="display-4 mb-3">Nuestros Servicios</h1>
-                <p class="lead">Selecciona el plan que mejor se adapte a tus necesidades</p>
+        <!-- SERVICIOS -->
+        <section class="servicios">
+            <div data-aos="fade-down">
+                <h1 class="titulo-servicios">Servicios</h1>
+                <p class="frase-servicios">Selecciona el plan que mejor se adapte a tus necesidades</p>
             </div>
-        </section>
 
-        <div class="container">
-            <div class="servicios-layout">
-                <!-- Contenedor de servicios -->
-                <div id="servicios-container"></div>
-
-                <!-- Carrito de compras -->
-                <div class="carrito-container">
-                    <h2>Tu Carrito</h2>
-                    <div id="carrito-items"></div>
-                    <div id="carrito-total">Total: $0</div>
-                    <button onclick="carrito.vaciarCarrito()" class="btn-vaciar">
-                        Vaciar Carrito
-                    </button>
+            <div class="contenedorservicios">
+                <div class="servicios-layout">
+                    <!-- Contenedor de servicios -->
+                    <div id="servicios-container"></div>
+    
+                    <!-- Carrito de compras -->
+                    <div class="carrito-container">
+                        <h2>Tu Carrito</h2>
+                        <div id="carrito-items"></div>
+                        <div id="carrito-total">Total: $0</div>
+                        <button onclick="carrito.vaciarCarrito()" class="btn-vaciar">
+                            Vaciar Carrito
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <div class="contenedor-footer">
-            <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
-            <ul>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Términos de Uso</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
+        <p>© Copyright SofiaYacovella - 2024 . Todos los derechos reservados</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/sofiayacovella/" target="_blank">
+                 <img src="../img/instagram-logo.png" alt="logo de instagram" class="footer-clickeables">
+            </a>
+            <a href="https://www.linkedin.com/in/sofiayacovella" target="_blank">
+                <img src="../img/linkedin-logo.png" alt="logo de linkedin" class="footer-clickeables">
+            </a>
+            <a href="https://wa.me/543424302010?text=Hola%20Sofia!%20Vengo%20desde%20tu%20Sitio%20Web%F0%9F%8C%90%20y%20queria%20consultarte%20sobre...." target="_blank">
+                <img src="../img/wsp-logo.png" alt="logo de wsp" class="footer-clickeables">
+            </a>
         </div>
     </footer>
 
+    <script src="./js/index.js"></script>
     <script src="../js/servicios.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

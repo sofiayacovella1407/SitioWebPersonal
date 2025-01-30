@@ -10,7 +10,7 @@ header {
     top: 0; left: 0; width: 100%;
     z-index: 1000;
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    grid-template-columns: 0.5fr auto minmax(600px, 3fr) 0.5fr;
 
     .logo-link {
         grid-column: 2 / 3;
