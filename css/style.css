@@ -505,4 +505,15 @@ main article {
   text-align: center;
 }
 
+.servicios .servicios-layout{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Agrega un espacio entre los elementos */
+  transition: transform 0.3s ease;
+  flex-wrap: wrap;
+}
+
+
 /*# sourceMappingURL=style.css.map */
