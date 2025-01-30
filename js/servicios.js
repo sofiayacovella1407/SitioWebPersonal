@@ -95,6 +95,10 @@ class Carrito {
         this.actualizarInterfaz();
     }
 
+    estaVacio() {
+    return this.items.length === 0;
+}
+
     actualizarInterfaz() {
         const carritoContainer = document.getElementById('carrito-items');
         const totalElement = document.getElementById('carrito-total');
@@ -165,20 +169,27 @@ function mostrarServicios() {
 }
 
 function comprarCarrito() {
-    // Pedir confirmación antes de realizar la compra
-    const confirmarCompra = confirm("¿Estás seguro de que quieres realizar la compra?");
+ // Verificar si el carrito está vacío
+ if (carrito.estaVacio()) {
+    // Mostrar un mensaje si el carrito está vacío
+    alert('El carrito está vacío. Agrega productos para realizar la compra');
+    return; // No hacer nada más si el carrito está vacío
+}
 
-    // Si el usuario confirma, proceder con la compra
-    if (confirmarCompra) {
-        // Mostrar un mensaje de éxito
-        alert('¡Compra realizada con éxito!');
-        
-        // Vaciar el carrito
-        carrito.vaciarCarrito();
-    } else {
-        // Si el usuario cancela, no hacer nada
-        alert('Compra cancelada.');
-    }
+// Pedir confirmación antes de realizar la compra
+const confirmarCompra = confirm("¿Estás seguro de que quieres realizar la compra?");
+
+// Si el usuario confirma, proceder con la compra
+if (confirmarCompra) {
+    // Mostrar un mensaje de éxito
+    alert('¡Compra realizada con éxito! Pronto me pondre en contacto contigo');
+    
+    // Vaciar el carrito
+    carrito.vaciarCarrito();
+} else {
+    // Si el usuario cancela, no hacer nada
+    alert('Compra cancelada');
+}
 }
 
 
