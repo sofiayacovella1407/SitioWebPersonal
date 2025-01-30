@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/style.css">
+ <!--fonts-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <!-- Link al CSS de AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Link al CSS de Animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <title>Costos y Servicios</title>
+</head>
+<body>
+    <header>
+        <nav class="navegador">
+            <ul class="header-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./sobremi.html">Sobre mi</a></li>
+                <li><a href="./educacion.html">Educacion</a></li>
+                <li><a href="./trabajos.html">Trabajos</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="servicios-hero bg-light py-5 text-center">
+            <div class="container">
+                <h1 class="display-4 mb-3">Nuestros Servicios</h1>
+                <p class="lead">Selecciona el plan que mejor se adapte a tus necesidades</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="servicios-layout">
+                <!-- Contenedor de servicios -->
+                <div id="servicios-container"></div>
+
+                <!-- Carrito de compras -->
+                <div class="carrito-container">
+                    <h2>Tu Carrito</h2>
+                    <div id="carrito-items"></div>
+                    <div id="carrito-total">Total: $0</div>
+                    <button onclick="carrito.vaciarCarrito()" class="btn-vaciar">
+                        Vaciar Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contenedor-footer">
+            <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+            <ul>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos de Uso</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../js/servicios.js"></script>
+</body>
+</html>
