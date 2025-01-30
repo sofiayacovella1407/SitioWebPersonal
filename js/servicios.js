@@ -66,6 +66,7 @@ const servicios = [
 class Carrito {
     constructor() {
         this.items = JSON.parse(localStorage.getItem('carrito')) || [];
+        this.actualizarInterfaz();
     }
 
     agregarItem(servicio) {
@@ -162,6 +163,25 @@ function mostrarServicios() {
         serviciosContainer.appendChild(categoriaElement);
     });
 }
+
+function comprarCarrito() {
+    // Pedir confirmación antes de realizar la compra
+    const confirmarCompra = confirm("¿Estás seguro de que quieres realizar la compra?");
+
+    // Si el usuario confirma, proceder con la compra
+    if (confirmarCompra) {
+        // Mostrar un mensaje de éxito
+        alert('¡Compra realizada con éxito!');
+        
+        // Vaciar el carrito
+        carrito.vaciarCarrito();
+    } else {
+        // Si el usuario cancela, no hacer nada
+        alert('Compra cancelada.');
+    }
+}
+
+
 
 // Event Listener para cuando el DOM esté cargado
 document.addEventListener('DOMContentLoaded', () => {
