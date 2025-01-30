@@ -99,31 +99,40 @@ class Carrito {
     return this.items.length === 0;
 }
 
-    actualizarInterfaz() {
-        const carritoContainer = document.getElementById('carrito-items');
-        const totalElement = document.getElementById('carrito-total');
+    // Método para actualizar la interfaz del carrito
+actualizarInterfaz() {
+    const carritoContainer = document.getElementById('carrito-items');
+    const totalElement = document.getElementById('carrito-total');
+    
+    if (carritoContainer) {
+        carritoContainer.innerHTML = '';
         
-        if (carritoContainer) {
-            carritoContainer.innerHTML = '';
-            
+        if (this.items.length > 0) {
             this.items.forEach(item => {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'carrito-item';
                 itemElement.innerHTML = `
-                    <p>${item.nombre}</p>
-                    <p>$${item.precio.toLocaleString()}</p>
-                    <button onclick="carrito.eliminarItem('${item.id}')" class="btn-eliminar">
-                        Eliminar
-                    </button>
+                    <div class="producto-card">
+                        <h3>${item.nombre}</h3>
+                        <p class="precio">$${item.precio.toLocaleString()}</p>
+                        <button onclick="carrito.eliminarItem('${item.id}')" class="btn-eliminar">
+                            Eliminar
+                        </button>
+                    </div>
                 `;
                 carritoContainer.appendChild(itemElement);
             });
+        } else {
+            // Si el carrito está vacío
+            carritoContainer.innerHTML = '<p class="vacío">Tu carrito está vacío.</p>';
+        }
 
-            if (totalElement) {
-                totalElement.textContent = `Total: $${this.calcularTotal().toLocaleString()}`;
-            }
+        // Actualizar el total del carrito
+        if (totalElement) {
+            totalElement.textContent = `Total: $${this.calcularTotal().toLocaleString()}`;
         }
     }
+}
 }
 
 // Inicialización del carrito
