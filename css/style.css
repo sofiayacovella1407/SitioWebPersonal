@@ -505,21 +505,123 @@ main article {
   text-align: center;
 }
 
+/* Estilos para la categoría de servicios */
+.categoria-servicios {
+  margin: 20px 0;
+}
+
+.categoria-servicios h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Contenedor de las opciones */
+.opciones-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Estilos para cada opción de servicio */
+.opcion-servicio {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en cada tarjeta */
+.opcion-servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de la tarjeta */
+.plan-card {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Títulos de los planes */
+.plan-card h3 {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Descripción del plan */
+.descripcion {
+  font-size: 14px;
+  color: #777;
+  margin: 10px 0;
+}
+
+/* Precio del servicio */
+.precio {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d7dd2;
+  margin: 10px 0;
+}
+
+/* Características */
+.caracteristicas {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.caracteristicas li {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Botón de agregar al carrito */
+.btn-agregar {
+  background-color: #2d7dd2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en el botón */
+.btn-agregar:hover {
+  background-color: #1d5f99;
+}
+
+/*
+
 .servicios .servicios-layout{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Agrega un espacio entre los elementos */
+  gap: 20px;
   transition: transform 0.3s ease;
   flex-wrap: wrap;
 }
 
-.servicio .p{
-  border: 2px solid #4CAF50; /* Borde verde */
-  background-color: #e8f5e9;
+.contenedor-tienda{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
-
 
 .servicios .servicios-layout .carrito-container{
   border: 2px solid #895442;
@@ -527,8 +629,7 @@ main article {
   border-radius: 10px;
   background-color: rgba(194, 189, 123, 0.285);
   color: #292828;
-
 }
-
+*/ 
 
 /*# sourceMappingURL=style.css.map */

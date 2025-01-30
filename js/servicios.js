@@ -137,30 +137,32 @@ function mostrarServicios() {
         const categoriaElement = document.createElement('section');
         categoriaElement.className = 'categoria-servicios';
         
-        categoriaElement.innerHTML = `
-            <h2>${categoria.categoria}</h2>
+        categoriaElement.innerHTML = 
+            `<h2>${categoria.categoria}</h2>
             <div class="opciones-container">
-                ${categoria.opciones.map(opcion => `
-                    <div class="opcion-servicio">
-                        <h3>${opcion.nombre}</h3>
-                        <p>${opcion.descripcion}</p>
-                        <p class="precio">$${opcion.precio.toLocaleString()}</p>
-                        <ul>
-                            ${opcion.caracteristicas.map(caract => `
-                                <li>${caract}</li>
-                            `).join('')}
-                        </ul>
-                        <button 
-                            onclick="carrito.agregarItem({
-                                id: '${opcion.id}',
-                                nombre: '${opcion.nombre}',
-                                precio: ${opcion.precio}
-                            })"
-                            class="btn-agregar">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                `).join('')}
+                ${categoria.opciones.map(opcion => 
+                    `<div class="opcion-servicio">
+                        <div class="plan-card">
+                            <h3>${opcion.nombre}</h3>
+                            <p class="descripcion">${opcion.descripcion}</p>
+                            <p class="precio">$${opcion.precio.toLocaleString()}</p>
+                            <ul class="caracteristicas">
+                                ${opcion.caracteristicas.map(caract => 
+                                    `<li>${caract}</li>`
+                                ).join('')}
+                            </ul>
+                            <button 
+                                onclick="carrito.agregarItem({
+                                    id: '${opcion.id}',
+                                    nombre: '${opcion.nombre}',
+                                    precio: ${opcion.precio}
+                                })"
+                                class="btn-agregar">
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>`
+                ).join('')}
             </div>
         `;
         
