@@ -604,6 +604,9 @@ main article {
 
 
 /* Contenedor del carrito */
+
+
+
 .carrito-container{
   text-align: center;
 }
@@ -625,6 +628,7 @@ main article {
 }
 
 /* Estilos para cada producto en el carrito */
+
 .carrito-item {
   display: flex;
   justify-content: space-between;
@@ -731,5 +735,53 @@ main article {
   background-color: #0c5c12;
 }
 
+/*Estilo del modal del carrito*/
+
+/*Icono del carrito*/
+#carritoIcono {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+
+#carritoModal {
+  text-align: center;
+}
+
+/* Hace que el modal sea scrollable */
+.modal {
+  display: none; /* Asegura que el modal NO se muestre al cargar la página */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Establece el tamaño del modal y permite scroll dentro de él */
+.modal-content {
+  background-color: white;
+  width: 50%;
+  max-height: 80vh; /* Limita la altura */
+  overflow-y: auto; /* Activa el scroll interno */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Bloquea el scroll del body cuando el modal está abierto */
+body.modal-abierto {
+  overflow: hidden;
+}
+
+.cerrar {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=style.css.map */

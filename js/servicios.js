@@ -210,3 +210,33 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarServicios();
     carrito.actualizarInterfaz();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let carritoIcono = document.getElementById("carritoIcono");
+    let carritoModal = document.getElementById("carritoModal");
+    let cerrarBtn = document.querySelector(".cerrar");
+  
+    // Asegura que el modal esté oculto al cargar la página
+    carritoModal.style.display = "none";
+  
+    // Variable para rastrear si el modal está abierto
+    let modalAbierto = false;
+  
+    // Evento para abrir el modal SOLO cuando se haga clic en el carrito
+    carritoIcono.addEventListener("click", function (event) {
+      event.stopPropagation(); // Evita que otros eventos interfieran
+      if (!modalAbierto) {
+        carritoModal.style.display = "block";
+        document.body.classList.add("modal-abierto"); // Bloquea el scroll del body
+        modalAbierto = true;
+      }
+    });
+  
+    // Evento para cerrar el modal
+    cerrarBtn.addEventListener("click", function () {
+      carritoModal.style.display = "none";
+      document.body.classList.remove("modal-abierto"); // Restaura el scroll del body
+      modalAbierto = false;
+    });
+  });
+  
