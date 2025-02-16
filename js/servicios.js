@@ -96,43 +96,49 @@ class Carrito {
     }
 
     estaVacio() {
-    return this.items.length === 0;
-}
+        return this.items.length === 0;
+    }
 
     // Método para actualizar la interfaz del carrito
-actualizarInterfaz() {
-    const carritoContainer = document.getElementById('carrito-items');
-    const totalElement = document.getElementById('carrito-total');
-    
-    if (carritoContainer) {
-        carritoContainer.innerHTML = '';
-        
-        if (this.items.length > 0) {
-            this.items.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.className = 'carrito-item';
-                itemElement.innerHTML = `
-                    <div class="producto-card">
-                        <h3>${item.nombre}</h3>
-                        <p class="precio">$${item.precio.toLocaleString()}</p>
-                        <button onclick="carrito.eliminarItem('${item.id}')" class="btn-eliminar">
-                            Eliminar
-                        </button>
-                    </div>
-                `;
-                carritoContainer.appendChild(itemElement);
-            });
-        } else {
-            // Si el carrito está vacío
-            carritoContainer.innerHTML = '<p class="vacío">Tu carrito está vacío.</p>';
-        }
+    actualizarInterfaz() {
+        const carritoContainer = document.getElementById('carrito-items');
+        const totalElement = document.getElementById('carrito-total');
+        const cantidadElement = document.getElementById('carrito-cantidad');
 
-        // Actualizar el total del carrito
-        if (totalElement) {
-            totalElement.textContent = `Total: $${this.calcularTotal().toLocaleString()}`;
+        if (carritoContainer) {
+            carritoContainer.innerHTML = '';
+
+            if (this.items.length > 0) {
+                this.items.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'carrito-item';
+                    itemElement.innerHTML = `
+                        <div class="producto-card">
+                            <h3>${item.nombre}</h3>
+                            <p class="precio">$${item.precio.toLocaleString()}</p>
+                            <button onclick="carrito.eliminarItem('${item.id}')" class="btn-eliminar">
+                                Eliminar
+                            </button>
+                        </div>
+                    `;
+                    carritoContainer.appendChild(itemElement);
+                });
+            } else {
+                // Si el carrito está vacío
+                carritoContainer.innerHTML = '<p class="vacío">Tu carrito está vacío.</p>';
+            }
+
+            // Actualizar el total del carrito
+            if (totalElement) {
+                totalElement.textContent = `Total: $${this.calcularTotal().toLocaleString()}`;
+            }
+
+            // Actualizar la cantidad de items en el carrito
+            if (cantidadElement) {
+                cantidadElement.textContent = this.items.length;
+            }
         }
     }
-}
 }
 
 // Inicialización del carrito
@@ -141,11 +147,11 @@ const carrito = new Carrito();
 // Función para mostrar los servicios en el DOM
 function mostrarServicios() {
     const serviciosContainer = document.getElementById('servicios-container');
-    
+
     servicios.forEach(categoria => {
         const categoriaElement = document.createElement('section');
         categoriaElement.className = 'categoria-servicios';
-        
+
         categoriaElement.innerHTML = 
             `<h2>${categoria.categoria}</h2>
             <div class="opciones-container">
@@ -174,33 +180,33 @@ function mostrarServicios() {
                 ).join('')}
             </div>
         `;
-        
+
         serviciosContainer.appendChild(categoriaElement);
     });
 }
 
 function comprarCarrito() {
- // Verificar si el carrito está vacío
- if (carrito.estaVacio()) {
-    // Mostrar un mensaje si el carrito está vacío
-    alert('El carrito está vacío. Agrega productos para realizar la compra');
-    return; // No hacer nada más si el carrito está vacío
-}
+    // Verificar si el carrito está vacío
+    if (carrito.estaVacio()) {
+        // Mostrar un mensaje si el carrito está vacío
+        alert('El carrito está vacío. Agrega productos para realizar la compra');
+        return; // No hacer nada más si el carrito está vacío
+    }
 
-// Pedir confirmación antes de realizar la compra
-const confirmarCompra = confirm("¿Estás seguro de que quieres realizar la compra?");
+    // Pedir confirmación antes de realizar la compra
+    const confirmarCompra = confirm("¿Estás seguro de que quieres realizar la compra?");
 
-// Si el usuario confirma, proceder con la compra
-if (confirmarCompra) {
-    // Mostrar un mensaje de éxito
-    alert('¡Compra realizada con éxito! Pronto me pondre en contacto contigo');
-    
-    // Vaciar el carrito
-    carrito.vaciarCarrito();
-} else {
-    // Si el usuario cancela, no hacer nada
-    alert('Compra cancelada');
-}
+    // Si el usuario confirma, proceder con la compra
+    if (confirmarCompra) {
+        // Mostrar un mensaje de éxito
+        alert('¡Compra realizada con éxito! Pronto me pondré en contacto contigo');
+
+        // Vaciar el carrito
+        carrito.vaciarCarrito();
+    } else {
+        // Si el usuario cancela, no hacer nada
+        alert('Compra cancelada');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -208,31 +214,29 @@ document.addEventListener('DOMContentLoaded', () => {
     let carritoIcono = document.getElementById("carritoIcono");
     let carritoModal = document.getElementById("carritoModal");
     let cerrarBtn = document.querySelector(".cerrar");
-  
+
     // Asegura que el modal esté oculto al cargar la página
     carritoModal.style.display = "none";
-  
+
     // Variable para rastrear si el modal está abierto
     let modalAbierto = false;
-  
+
     // Evento para abrir el modal SOLO cuando se haga clic en el carrito
     carritoIcono.addEventListener("click", function (event) {
-      event.stopPropagation(); // Evita que otros eventos interfieran
-      if (!modalAbierto) {
-        carritoModal.style.display = "block";
-        document.body.classList.add("modal-abierto"); // Bloquea el scroll del body
-        modalAbierto = true;
-      }
+        event.stopPropagation(); // Evita que otros eventos interfieran
+        if (!modalAbierto) {
+            carritoModal.style.display = "block";
+            document.body.classList.add("modal-abierto"); // Bloquea el scroll del body
+            modalAbierto = true;
+        }
     });
-  
+
     // Evento para cerrar el modal
     cerrarBtn.addEventListener("click", function () {
-      carritoModal.style.display = "none";
-      document.body.classList.remove("modal-abierto"); // Restaura el scroll del body
-      modalAbierto = false;
+        carritoModal.style.display = "none";
+        document.body.classList.remove("modal-abierto"); // Restaura el scroll del body
+        modalAbierto = false;
     });
 });
-
-
 
   
