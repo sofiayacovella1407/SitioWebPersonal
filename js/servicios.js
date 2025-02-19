@@ -193,21 +193,48 @@ function comprarCarrito() {
         return; // No hacer nada más si el carrito está vacío
     }
 
-    // Pedir confirmación antes de realizar la compra
-    const confirmarCompra = confirm("¿Estás seguro de que quieres realizar la compra?");
-
-    // Si el usuario confirma, proceder con la compra
-    if (confirmarCompra) {
-        // Mostrar un mensaje de éxito
-        alert('¡Compra realizada con éxito! Pronto me pondré en contacto contigo');
-
-        // Vaciar el carrito
-        carrito.vaciarCarrito();
-    } else {
-        // Si el usuario cancela, no hacer nada
-        alert('Compra cancelada');
-    }
+    // Mostrar formulario de compra
+    const compraFormModal = document.getElementById('compraFormModal');
+    compraFormModal.style.display = 'block';
 }
+
+// Manejar el envío del formulario de compra
+document.getElementById('compra-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevenir el envío del formulario
+
+    // Obtener los datos del formulario
+    const nombre = document.getElementById('nombre').value;
+    const dni = document.getElementById('dni').value;
+    const direccion = document.getElementById('direccion').value;
+    const ciudad = document.getElementById('ciudad').value;
+    const provincia = document.getElementById('provincia').value;
+    const nacionalidad = document.getElementById('nacionalidad').value;
+    const tipoServicio = document.getElementById('tipo-servicio').value;
+    const empresa = tipoServicio === 'empresa' ? document.getElementById('empresa').value : 'N/A';
+
+    // Mostrar el alias para la transferencia y el número de WhatsApp
+    alert(`
+        Alias para la transferencia: ecommerce.alias
+        Una vez hecha la transferencia, envía el comprobante al WhatsApp 3424302010.
+        Pronto me pondré en contacto contigo para comenzar a trabajar juntos.
+    `);
+
+    // Cerrar el formulario de compra
+    const compraFormModal = document.getElementById('compraFormModal');
+    compraFormModal.style.display = 'none';
+
+    // Vaciar el carrito
+    carrito.vaciarCarrito();
+});
+
+document.getElementById('tipo-servicio').addEventListener('change', function(event) {
+    const empresaContainer = document.getElementById('empresa-container');
+    if (event.target.value === 'empresa') {
+        empresaContainer.style.display = 'block';
+    } else {
+        empresaContainer.style.display = 'none';
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     mostrarServicios();
@@ -236,6 +263,13 @@ document.addEventListener('DOMContentLoaded', () => {
         carritoModal.style.display = "none";
         document.body.classList.remove("modal-abierto"); // Restaura el scroll del body
         modalAbierto = false;
+    });
+
+    // Cerrar el modal de compra al hacer clic en la "x"
+    document.querySelectorAll('.cerrar').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.parentElement.parentElement.style.display = 'none';
+        });
     });
 });
 

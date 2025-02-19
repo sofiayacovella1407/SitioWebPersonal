@@ -98,6 +98,46 @@
         </div>
     </footer>
 
+    <!-- Formulario de compra -->
+    <div id="compraFormModal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <h2>Formulario de compra</h2>
+            <form id="compra-form">
+                <label for="nombre">Nombre y Apellido:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+                
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+                
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+                
+                <label for="provincia">Provincia:</label>
+                <input type="text" id="provincia" name="provincia" required>
+                
+                <label for="nacionalidad">Nacionalidad:</label>
+                <input type="text" id="nacionalidad" name="nacionalidad" required>
+                
+                <label for="tipo-servicio">Tipo de servicio:</label>
+                <select id="tipo-servicio" name="tipo-servicio" required>
+                    <option value="emprendimiento/personal">Emprendimiento/Personal</option>
+                    <option value="empresa">Empresa</option>
+                </select>
+                
+                <div id="empresa-container" style="display: none;">
+                    <label for="empresa">Nombre de la Empresa:</label>
+                    <input type="text" id="empresa" name="empresa">
+                </div>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
     <script src="../js/servicios.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
