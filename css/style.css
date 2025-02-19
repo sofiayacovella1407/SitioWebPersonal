@@ -804,4 +804,50 @@ body.modal-abierto {
   font-weight: bold;
 }
 
+/*FORMULARIO DE COMPRA*/
+
+.form-content {
+  background-color: white; /* Fondo blanco */
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+.form-content #compra-form {
+  flex: 2;
+}
+.form-content #compra-form form {
+  display: flex;
+  flex-direction: column;
+}
+.form-content #compra-form form label {
+  display: block; /* Hace que el label sea un bloque */
+  margin-bottom: 0.5rem; /* Espacio debajo de cada label */
+}
+.form-content #compra-form input, .form-content #compra-form textarea, .form-content #compra-form button {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #292828;
+  background-color: rgba(194, 189, 123, 0.7294117647);
+  border-radius: 4px;
+}
+.form-content #compra-form button {
+  background-color: #895442;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.form-content #compra-form button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
 /*# sourceMappingURL=style.css.map */
