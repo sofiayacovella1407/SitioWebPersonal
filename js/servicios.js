@@ -214,9 +214,11 @@ document.getElementById('compra-form').addEventListener('submit', function(event
 
     // Mostrar el alias para la transferencia y el número de WhatsApp
     alert(`
-        Alias para la transferencia: ecommerce.alias
-        Una vez hecha la transferencia, envía el comprobante al WhatsApp 3424302010.
-        Pronto me pondré en contacto contigo para comenzar a trabajar juntos.
+        ¡ATENCION!⚠️ No olvides tomar captura antes de salir de la página por si acaso.
+        Pasos a seguir para finalizar la compra:
+        1️⃣Transferir el monto total al alias: sofiayacovella.mp
+        2️⃣Enviar comprobante al WhatsApp: +54 3424302010.
+        Pronto me pondré en contacto contigo para comenzar a trabajar juntos! Gracias por tu compra🛍️
     `);
 
     // Cerrar el formulario de compra
