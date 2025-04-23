@@ -490,6 +490,19 @@ main article {
   background-color: #cbc411; /* Color de fondo */
 }
 
+/* Estilo para enlaces de certificaciones */
+main article .link-certificacion {
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  color: #292828; /* Define el color negro para el texto */
+  font-weight: bold; /* Opcional: Para resaltar el texto */
+}
+
+/* Estilo al pasar el cursor */
+main article .link-certificacion:hover {
+  color: #ffffff; /* Cambia a rojo al pasar el cursor */
+  transition: color 0.3s ease; /* Añade una transición suave */
+}
+
 /* SERVICIOS */
 
 .servicios .titulo-servicios {
