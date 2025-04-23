@@ -1,0 +1,19 @@
+# Dependencias de Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de log
+*.log
+
+# Salidas de compilación o build
+dist/
+build/
+
+# Configuración del entorno
+.env
